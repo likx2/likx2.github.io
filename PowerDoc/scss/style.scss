@@ -1,0 +1,444 @@
+@font-face {
+    font-family: 'Proxima Nova Rg';
+    src: url('../fonts/');
+    src: local('Proxima Nova Regular'), local('ProximaNova-Regular'),
+        url('../fonts/?#iefix') format('embedded-opentype'),
+        url('../fonts/ProximaNova-Regular.woff2') format('woff2'),
+        url('../fonts/ProximaNova-Regular.woff') format('woff'),
+        url('../fonts/ProximaNova-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Ex';
+    src: url('../fonts/ProximaNova-Extrabld.eot');
+    src: local('../fonts/Proxima Nova Extrabold'), local('ProximaNova-Extrabld'),
+        url('../fonts/ProximaNova-Extrabld.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/ProximaNova-Extrabld.woff2') format('woff2'),
+        url('../fonts/ProximaNova-Extrabld.woff') format('woff'),
+        url('../fonts/ProximaNova-Extrabld.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova B';
+    src: url('../fonts/ProximaNova-Bold.eot');
+    src: local('../fonts/Proxima Nova Bold'), local('ProximaNova-Bold'),
+        url('../fonts/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/ProximaNova-Bold.woff2') format('woff2'),
+        url('../fonts/ProximaNova-Bold.woff') format('woff'),
+        url('../fonts/ProximaNova-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@import "mixins";
+@import "var";
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 8px 50px rgba(153, 153, 153, 0.3);
+    z-index: 10;
+}
+
+.my-container {
+    // width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header__inner {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    a {
+        margin-right: 48px;
+        @include content-text-style;
+        text-decoration: none;
+        font-size: 18px;
+        transition: all 0.3s;
+        color: #576078;
+
+        &:hover {
+            font-weight: bold;
+            color: #181941;
+        }
+    }
+}
+
+.header__btn {
+    @include btn-style;
+    padding: 12px 36px;
+}
+
+
+
+.burger {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    div {
+        width: 24px;
+        height: 3px;
+        margin: 8px;
+        background-color: #00D9B6;
+        transition: all 0.3s;
+
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.burger {
+    padding: 32px 20px 0 0;
+    display: none;
+}
+
+
+
+.burger {
+    display: none;
+}
+
+
+.nav__active {
+    transform: translateX(0%);
+}
+
+.toggle__line-1 {
+    transform: rotate(-45deg) translate(-6px, 10px);
+}
+
+.toggle__line-2 {
+    opacity: 0;
+}
+
+.toggle__line-3 {
+    transform: rotate(45deg) translate(-6px, -10px);
+    ;
+}
+
+.hero__page {
+    margin-top: 200px;
+    padding-bottom: 180px;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__text {
+        // line-height: 120%;
+    }
+
+    &__title {
+        font-family: 'Proxima Nova Ex', sans-serif;
+        font-size: 36px;
+        line-height: 43px;
+        color: #181941;
+
+    }
+
+    &__subtitle {
+        margin-top: 16px;
+        @include content-text-style;
+        line-height: 25px;
+    }
+
+    &__img {
+        width: 100%;
+        max-width: 692px;
+        height: auto;
+    }
+}
+
+// Consult Popup
+.consult__popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s;
+    z-index: 20;
+
+    &__content {
+        position: relative;
+        max-width: 794px;
+        padding: 40px 100px;
+        text-align: center;
+        background-color: white;
+        box-shadow: 0px 8px 50px rgba(153, 153, 153, 0.3);
+        border-radius: 10px;
+
+        form {
+            h3 {
+                @include section-header-style;
+
+                br {
+                    display: none;
+                }
+            }
+
+            input {
+                display: block;
+                margin: 0 auto 10px auto;
+                border: 1px solid #CECECE;
+                border-radius: 6px;
+                padding: 10px 0 10px 16px;
+                font-family: 'Proxima Nova B', sans-serif;
+                font-size: 16px;
+                color: #181941;
+
+                &:focus {
+                    outline: none;
+                    border: 1px solid #181941;
+                }
+
+
+                &::placeholder {
+                    @include content-text-style;
+                }
+            }
+
+            input[placeholder="Имя"] {
+                margin-top: 24px;
+            }
+
+            input[placeholder="Телефон"] {
+                margin-bottom: 40px;
+            }
+
+            button {
+                width: 100%;
+                @include btn-style;
+                padding: 12px 0;
+            }
+
+            input,
+            button {
+                width: 100%;
+                max-width: 386px;
+            }
+
+        }
+
+        .close__btn {
+            position: absolute;
+            right: 0;
+            top: 0;
+            border: none;
+            background-color: transparent;
+            width: 16px;
+            height: 16px;
+            background: url("../images/close.svg") no-repeat center;
+            background-size: cover;
+            padding: 0;
+            margin: 40px 40px 0 0;
+            cursor: pointer;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+// Service
+.service {
+    padding-top: 138px;
+    padding-bottom: 80px;
+
+    &__title {
+        @include section-header-style;
+    }
+
+    &__slider {
+        position: relative;
+        max-width: 1328px;
+        margin: 32px auto 0 auto;
+        border-radius: 10px;
+        box-shadow: 0px 8px 50px rgba(153, 153, 153, 0.3);
+
+
+        &__el__inner {
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        &__text {
+            // max-width: 424px;
+        }
+
+        .prevArrow,
+        .nextArrow {
+            position: absolute;
+            bottom: 48px;
+        }
+
+        .prevArrow {
+            left: 64px;
+        }
+
+        .nextArrow {
+            left: 148px;
+        }
+    }
+
+}
+
+.slick-active,
+.slick-slide {
+    outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Media
+@media (max-width: 1350px) {
+
+    .my-container {
+        // max-width: 960px;
+        // margin-left: 100px;
+        // margin-right: 100px;
+    }
+
+
+}
+
+@media (max-width: 992px) {
+    // header {
+    //     .container {
+    //         margin: 0;
+    //     }
+    // }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        transform: translateX(100%);
+        height: 100vh;
+        background-color: white;
+        transition: all 0.3s;
+
+        a {
+            margin-bottom: 32px;
+            margin-right: 0;
+
+        }
+    }
+
+    .hero__page {
+        margin-top: 128px;
+
+        &__inner {
+            display: block;
+            text-align: center;
+        }
+
+        &__text {
+            // max-width: 345px;
+            padding: 0 15px;
+            text-align: left;
+            margin-bottom: 32px;
+        }
+
+        &__title {
+            font-size: 30px;
+            line-height: 36px;
+
+            br {
+                display: none;
+            }
+        }
+
+        &__subtitle {
+            margin-top: 12px;
+
+            br {
+                display: none;
+            }
+        }
+
+    }
+
+    .burger {
+        display: block;
+    }
+
+
+
+    .consult__popup__content {
+        padding: 146px 16px;
+
+        form {
+            h3 {
+                font-size: 24px;
+
+                br {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .service__slider {
+        margin: 24px 16px 0 16px;
+    }
+
+    .service__slider__el {}
+
+    .service__slider__el__inner {
+        flex-direction: column-reverse;
+    }
+
+}
