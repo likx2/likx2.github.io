@@ -40,59 +40,54 @@ promo__bg.style.backgroundImage = "url('../img/bg.jpg')";
 
 
 // New Task
-const films = document.querySelectorAll(".promo__interactive-item");
-const btn = document.querySelector("button");
-let input = document.querySelector(".adding__input");
-const promo__list = document.querySelector(".promo__interactive-list");
+let films = document.querySelectorAll('.promo__interactive-item');
+let movieList = document.querySelector('.promo__interactive-list');
+let input = document.querySelector('.adding__input');
+let checkbox = document.querySelector('input[type="checkbox"]');
+const alarm = document.createElement('div');
+const addForm = document.querySelector('form.add');
 films.forEach(value => {
     value.remove();
-})
+});
 
-
-// Flag to delete
-let flag = false;
-
-// Add Element
-function addElement(array, target, className_1, addingTag) {
-    let list = new Array(array.length);
-
+function print(array, parent) {
+    parent.innerHTML = '';
     for (let i = 0; i < array.length; i++) {
-        list[i] = document.createElement("li");
-        if (array.sort()[i].length > 21) {
-            array.sort()[i] = array.sort()[i].slice(0, array.sort()[i].length / 2) + "...";
-        }
-        list[i].innerHTML = (i + 1).toString() + ". " + array.sort()[i];
-        list[i].classList.add(className_1);
-        target.append(list[i]);
-        list[i].insertAdjacentHTML("afterbegin", addingTag);
+        parent.innerHTML += `
+        <li class="promo__interactive-item">${i + 1}. ${array[i]}
+            <div class="delete"></div>
+        </li>
+    `;
     }
-}
-addElement(movieDB.movies, promo__list, "promo__interactive-item", '<div class="delete"></div>');
 
-
-btn.addEventListener("click", (event) => {
-    event.preventDefault();
-    if (input.value !== "") {
-        input.style.cssText = '';
-        movieDB.movies.push(input.value);
-        const newFilms = document.querySelectorAll(".promo__interactive-item");
-        newFilms.forEach(value => {
-            value.remove();
+    let bins = document.querySelectorAll('.delete');
+    bins.forEach((value, i) => {
+        value.addEventListener('click', () => {
+            value.parentElement.remove();
+            array.splice(i, 1);
+            print(array, parent);
         })
-        addElement(movieDB.movies, promo__list, "promo__interactive-item", '<div class="delete"></div>');
+    });
+}
+
+print(movieDB.movies, movieList);
+addForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    let newFilm = input.value.toUpperCase();
+    if (newFilm !== '') {
+        alarm.innerHTML = '';
+        input.style.cssText = '';
+        movieDB.movies.push(newFilm);
+        movieDB.movies.sort();
+        print(movieDB.movies, movieList);
+        if (checkbox.checked) {
+            console.log("Добавляем любимый фильм");
+        }
     } else {
-        input.style.cssText = 'border-color: #d63031;box-shadow: 0 0 5px #d63031;';
+        input.style.cssText = 'border-color: #EA2027;box-shadow: 0 0 5px #EA2027;';
+        alarm.innerHTML = '* Обязательное поле';
+        alarm.style.cssText = 'margin-top: 10px;font-size: 10px;color: #EA2027;'
+        input.after(alarm);
     }
 
-})
-
-const bin = document.querySelectorAll('.delete');
-
-
-// Deleting alement from the doc
-bin.forEach(value => {
-    value.addEventListener("click", () => {
-        value.parentElement.remove();
-        flag = true;
-    });
 })
