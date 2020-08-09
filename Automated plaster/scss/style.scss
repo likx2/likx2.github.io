@@ -31,8 +31,19 @@ html {
   font-size: 10px;
 }
 
+
+
 button:focus {
   outline: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
 }
 
 header {
@@ -190,7 +201,7 @@ input {
 .section-title {
   @include bold;
   font-size: 3.6rem;
-  color: #1a1820;
+  color: $text_color;
 }
 
 .features {
@@ -305,15 +316,11 @@ input {
   }
 }
 
-@media(max-width: 45rem) {
-  .popup-content {
-    width: 30rem;
-  }
-}
+
 
 // Prices
 .prices {
-  padding: 11.5rem 0;
+  padding: 10rem 0;
   background-color: #286c0a;
 
   &-title {
@@ -407,7 +414,7 @@ ul.card-text {
 // Feedback
 .feedback {
   position: relative;
-  padding-top: 10rem;
+  padding: 10rem 0;
   background: url("../images/feedback/feedback-bg.jpg") no-repeat center;
   background-size: cover;
 
@@ -462,6 +469,7 @@ ul.card-text {
   &-title {
     @include bold;
     font-size: 3.6rem;
+    color: $text_color;
   }
 
   &-text {
@@ -521,34 +529,142 @@ ul.card-text {
       position: absolute;
       left: 0;
       bottom: 0;
-      transform: translate(-80%, 20%);
+      transform: translate(-80%, 33%);
       width: 40rem;
       height: 30rem;
       background: url("../images/feedback/hand.png") no-repeat center;
       background-size: cover;
     }
   }
-
-  // .hand {
-  //   position: absolute;
-  //   bottom: 0;
-  //   left: 0;
-  //   max-width: 40rem;
-
-  // }
 }
 
+// Scheme
+.scheme {
+  padding: 10rem 0 0 0;
+  position: relative;
+
+
+  &__title {
+    @include bold;
+    font-size: 3.6rem;
+    color: $text_color;
+  }
+
+  &__subtitle {
+    @include reg;
+    font-size: 1.6rem;
+    color: $text_color;
+    margin-top: 5.8rem;
+    margin-bottom: 7rem;
+  }
+
+  &__icon {
+    height: 10rem;
+  }
+
+  &__item__title {
+    @include bold;
+    font-size: 2.2rem;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+    color: $text_color;
+
+  }
+
+  &__item__capture {
+    @include reg;
+    font-size: 1.7rem;
+    color: $text_color;
+  }
+
+  &_row {
+    margin-top: 10rem;
+    padding-bottom: 10rem;
+  }
+
+  &__img {
+    position: absolute;
+    display: inline-block;
+    bottom: 0;
+    right: 0;
+    // padding: inherit;
+    width: 40%;
+
+  }
+}
+
+// Pluses
+.pluses {
+  padding: 12rem 0;
+  background-color: #f5f5f5;
+
+  &_title {
+    @include bold;
+    font-size: 4.8rem;
+    color: #428824;
+
+  }
+
+  &_subtitle {
+    @include reg;
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+    color: $text_color;
+  }
+
+  &_capture {
+    @include bold;
+    font-size: 1.6rem;
+    color: $text_color;
+  }
+
+  &_subtext {
+    @include reg;
+    font-size: 1.2rem;
+    color: $text_color;
+
+  }
+
+  &_icon {
+    float: left;
+    margin-right: 1rem;
+  }
+
+  &_row {
+    margin-top: 10rem;
+  }
+
+  .surface {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+  }
+}
+
+
+
+
+
+// Media
 @media (min-width: 992px) {
   header {
     background: url("../images/header-background.png") no-repeat center center;
     background-size: cover;
   }
+
+
 }
 
-@media (max-width:450px) {
+@media (max-width:500px) {
   .header-title {
     font-size: 2.5rem;
     line-height: 4rem;
+  }
+
+  .scheme {
+    padding: 5rem 0;
   }
 }
 
@@ -573,6 +689,24 @@ ul.card-text {
 
   .feedback-form::before {
     display: none;
+  }
+
+  .scheme__img {
+    display: none;
+  }
+
+  .scheme_row {
+    margin-top: 0;
+  }
+
+  .scheme__icon {
+    margin-top: 2rem;
+  }
+}
+
+@media(max-width: 45rem) {
+  .popup-content {
+    width: 30rem;
   }
 }
 
