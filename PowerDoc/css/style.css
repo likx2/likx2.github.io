@@ -25,8 +25,6 @@
 
 * {
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
 header {
@@ -43,6 +41,7 @@ header {
 .my-container {
   width: 92%;
   max-width: 1200px;
+  min-width: 288px;
   margin: 0 auto;
 }
 
@@ -177,6 +176,12 @@ nav a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.hero__page__text {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .hero__page__title {
@@ -371,6 +376,13 @@ nav a:hover {
   padding-bottom: 80px;
 }
 
+.service_container {
+  width: 95%;
+  max-width: 1328px;
+  min-width: 288px;
+  margin: 0 auto;
+}
+
 .service__title {
   font-family: 'Proxima Nova Ex', sans-serif;
   font-style: normal;
@@ -382,8 +394,7 @@ nav a:hover {
 
 .service__slider {
   position: relative;
-  max-width: 1328px;
-  margin: 32px auto 0 auto;
+  margin-top: 32px;
   border-radius: 10px;
   -webkit-box-shadow: 0px 8px 50px rgba(153, 153, 153, 0.3);
           box-shadow: 0px 8px 50px rgba(153, 153, 153, 0.3);
@@ -396,6 +407,10 @@ nav a:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.service__slider__img {
+  width: 100%;
 }
 
 .service__slider .prevArrow,
@@ -417,7 +432,19 @@ nav a:hover {
   outline: none;
 }
 
-@media (max-width: 710px) {
+@media (min-width: 710px) {
+  .hero__page__subtitle br.first-br {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero__page__title br.second-br {
+    display: none;
+  }
+}
+
+@media (max-width: 620px) {
   .hero__page__inner {
     display: block;
     text-align: center;
@@ -428,6 +455,10 @@ nav a:hover {
   .hero__page__text {
     text-align: left;
     margin-bottom: 32px;
+    max-width: 345px;
+  }
+  .hero__page__title br {
+    display: none;
   }
 }
 
@@ -474,13 +505,13 @@ nav a:hover {
     font-size: 30px;
     line-height: 36px;
   }
-  .hero__page__title br {
+  .hero__page__title br.second-br {
     display: none;
   }
   .hero__page__subtitle {
     margin-top: 12px;
   }
-  .hero__page__subtitle br {
+  .hero__page__subtitle br.second-br {
     display: none;
   }
   .burger {
@@ -495,14 +526,20 @@ nav a:hover {
   .consult__popup__content form h3 br {
     display: block;
   }
-  .service__slider {
-    margin: 24px 16px 0 16px;
-  }
   .service__slider__el__inner {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
+  }
+  .service__slider__img {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .service_container {
+    width: 92%;
+    margin: 0 auto;
   }
 }
 /*# sourceMappingURL=style.css.map */

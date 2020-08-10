@@ -39,7 +39,7 @@
 
 * {
     margin: 0;
-    box-sizing: border-box;
+    // box-sizing: border-box;
 }
 
 // HEADER
@@ -56,6 +56,7 @@ header {
 .my-container {
     width: 92%;
     max-width: 1200px;
+    min-width: 288px;
     margin: 0 auto;
 }
 
@@ -148,7 +149,9 @@ nav {
         align-items: center;
     }
 
-    &__text {}
+    &__text {
+        width: fit-content;
+    }
 
     &__title {
         font-family: 'Proxima Nova Ex', sans-serif;
@@ -166,7 +169,6 @@ nav {
 
     &__img {
         width: 60%;
-        // height: 55%;
         max-width: 692px;
         min-width: 288px;
     }
@@ -273,26 +275,43 @@ nav {
     padding-top: 138px;
     padding-bottom: 80px;
 
+    &_container {
+        width: 95%;
+        max-width: 1328px;
+        min-width: 288px;
+        margin: 0 auto;
+    }
+
     &__title {
         @include section-header-style;
     }
 
     &__slider {
         position: relative;
-        max-width: 1328px;
-        margin: 32px auto 0 auto;
+        margin-top: 32px;
         border-radius: 10px;
         box-shadow: 0px 8px 50px rgba(153, 153, 153, 0.3);
 
+        &__el {}
 
         &__el__inner {
             display: flex;
             justify-content: space-between;
 
+
         }
 
         &__text {
-            // max-width: 424px;
+            // padding-top: 48px;
+            // padding-left: 64px;
+            // padding: 3.5% 0 0 5.5%;
+            // height: 297px;
+
+        }
+
+        &__img {
+            width: 100%;
+
         }
 
         .prevArrow,
@@ -338,13 +357,26 @@ nav {
 
 
 
+
 // Media
-// @media(max-width:1200px){
-//     .hero__page__img{
-//         max-width: ;
-//     }
-// }
-@media(max-width:710px) {
+@media(min-width:710px) {
+    .hero__page__subtitle {
+        br.first-br {
+            display: none;
+        }
+    }
+
+}
+
+@media(min-width: 1200px) {
+    .hero__page__title {
+        br.second-br {
+            display: none;
+        }
+    }
+}
+
+@media(max-width:620px) {
     .hero__page__inner {
         display: block;
         text-align: center;
@@ -359,6 +391,13 @@ nav {
     .hero__page__text {
         text-align: left;
         margin-bottom: 32px;
+        max-width: 345px;
+    }
+
+    .hero__page__title {
+        br {
+            display: none;
+        }
     }
 
 }
@@ -396,15 +435,11 @@ nav {
     .hero__page {
         margin-top: 128px;
 
-
-
-
-
         &__title {
             font-size: 30px;
             line-height: 36px;
 
-            br {
+            br.second-br {
                 display: none;
             }
         }
@@ -412,7 +447,7 @@ nav {
         &__subtitle {
             margin-top: 12px;
 
-            br {
+            br.second-br {
                 display: none;
             }
         }
@@ -439,14 +474,17 @@ nav {
         }
     }
 
-    .service__slider {
-        margin: 24px 16px 0 16px;
-    }
-
-    .service__slider__el {}
-
     .service__slider__el__inner {
         flex-direction: column-reverse;
+    }
+
+    .service__slider__img {
+        align-self: center;
+    }
+
+    .service_container {
+        width: 92%;
+        margin: 0 auto;
     }
 
 }
