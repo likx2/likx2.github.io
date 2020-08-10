@@ -41,12 +41,12 @@ header {
 }
 
 .my-container {
+  width: 92%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .header__inner {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -197,9 +197,9 @@ nav a:hover {
 }
 
 .hero__page__img {
-  width: 100%;
+  width: 60%;
   max-width: 692px;
-  height: auto;
+  min-width: 288px;
 }
 
 .consult__popup {
@@ -417,8 +417,31 @@ nav a:hover {
   outline: none;
 }
 
+@media (max-width: 710px) {
+  .hero__page__inner {
+    display: block;
+    text-align: center;
+  }
+  .consult__popup .close__btn {
+    margin: 32px 24px 0 0;
+  }
+  .hero__page__text {
+    text-align: left;
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 1050px) {
+  nav a {
+    margin-right: 40px;
+  }
+}
+
 @media (max-width: 992px) {
   nav {
+    position: absolute;
+    right: 0;
+    top: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -432,9 +455,6 @@ nav a:hover {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    position: absolute;
-    right: 0;
-    top: 0;
     width: 100%;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
@@ -449,15 +469,6 @@ nav a:hover {
   }
   .hero__page {
     margin-top: 128px;
-  }
-  .hero__page__inner {
-    display: block;
-    text-align: center;
-  }
-  .hero__page__text {
-    padding: 0 15px;
-    text-align: left;
-    margin-bottom: 32px;
   }
   .hero__page__title {
     font-size: 30px;

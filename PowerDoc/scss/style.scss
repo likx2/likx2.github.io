@@ -42,6 +42,7 @@
     box-sizing: border-box;
 }
 
+// HEADER
 header {
     position: fixed;
     left: 0;
@@ -53,13 +54,13 @@ header {
 }
 
 .my-container {
-    // width: 100%;
+    width: 92%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .header__inner {
-    position: relative;
+    // position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -136,6 +137,7 @@ nav {
     ;
 }
 
+// HERO PAGE    
 .hero__page {
     margin-top: 200px;
     padding-bottom: 180px;
@@ -146,9 +148,7 @@ nav {
         align-items: center;
     }
 
-    &__text {
-        // line-height: 120%;
-    }
+    &__text {}
 
     &__title {
         font-family: 'Proxima Nova Ex', sans-serif;
@@ -165,13 +165,14 @@ nav {
     }
 
     &__img {
-        width: 100%;
+        width: 60%;
+        // height: 55%;
         max-width: 692px;
-        height: auto;
+        min-width: 288px;
     }
 }
 
-// Consult Popup
+// CONSULT POPUP
 .consult__popup {
     position: fixed;
     top: 0;
@@ -267,7 +268,7 @@ nav {
     }
 }
 
-// Service
+// SERVICE
 .service {
     padding-top: 138px;
     padding-bottom: 80px;
@@ -338,32 +339,47 @@ nav {
 
 
 // Media
-@media (max-width: 1350px) {
-
-    .my-container {
-        // max-width: 960px;
-        // margin-left: 100px;
-        // margin-right: 100px;
+// @media(max-width:1200px){
+//     .hero__page__img{
+//         max-width: ;
+//     }
+// }
+@media(max-width:710px) {
+    .hero__page__inner {
+        display: block;
+        text-align: center;
     }
 
+    .consult__popup {
+        .close__btn {
+            margin: 32px 24px 0 0;
+        }
+    }
+
+    .hero__page__text {
+        text-align: left;
+        margin-bottom: 32px;
+    }
 
 }
 
-@media (max-width: 992px) {
-    // header {
-    //     .container {
-    //         margin: 0;
-    //     }
-    // }
-
+@media(max-width:1050px) {
     nav {
+        a {
+            margin-right: 40px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    nav {
+        position: absolute;
+        right: 0;
+        top: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        position: absolute;
-        right: 0;
-        top: 0;
         width: 100%;
         transform: translateX(100%);
         height: 100vh;
@@ -380,17 +396,9 @@ nav {
     .hero__page {
         margin-top: 128px;
 
-        &__inner {
-            display: block;
-            text-align: center;
-        }
 
-        &__text {
-            // max-width: 345px;
-            padding: 0 15px;
-            text-align: left;
-            margin-bottom: 32px;
-        }
+
+
 
         &__title {
             font-size: 30px;
