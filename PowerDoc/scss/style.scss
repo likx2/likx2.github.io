@@ -292,11 +292,15 @@ nav {
         border-radius: 10px;
         box-shadow: 0px 8px 50px rgba(153, 153, 153, 0.3);
 
-        &__el {}
+        &__el {
+            overflow: hidden;
+        }
 
         &__el__inner {
             display: flex;
             justify-content: space-between;
+            // border-radius: 10px;
+            // border: 2px solid white;
 
 
         }
@@ -304,13 +308,16 @@ nav {
         &__text {
             // padding-top: 48px;
             // padding-left: 64px;
+            padding-top: 3.5%;
+            padding-left: 5%;
+            padding-bottom: 50px;
             // padding: 3.5% 0 0 5.5%;
             // height: 297px;
 
         }
 
         &__img {
-            width: 100%;
+            width: 60%;
 
         }
 
@@ -318,14 +325,26 @@ nav {
         .nextArrow {
             position: absolute;
             bottom: 48px;
+            // width: 15px;
+            // height: auto;
+            font-size: 0;
+            border: 0;
+            outline: none;
         }
 
         .prevArrow {
             left: 64px;
+            background: url('../images/nextArrow.svg') no-repeat center;
+            background-size: cover;
+            transform: rotate(180deg) scale(3);
         }
 
         .nextArrow {
             left: 148px;
+            background: url('../images/nextArrow.svg') no-repeat center;
+            background-size: cover;
+            transform: scale(3);
+
         }
     }
 
@@ -474,17 +493,35 @@ nav {
         }
     }
 
-    .service__slider__el__inner {
-        flex-direction: column-reverse;
-    }
-
-    .service__slider__img {
-        align-self: center;
-    }
-
     .service_container {
         width: 92%;
         margin: 0 auto;
     }
+
+    .service__slider {
+        &__el__inner {
+            flex-direction: column-reverse;
+        }
+
+        &__img {
+            align-self: center;
+        }
+
+
+
+        &__img {
+            width: 100%;
+        }
+
+        &__text {
+            // padding-bottom: 40px;
+        }
+
+        .prevArrow,
+        .nextArrow {
+            bottom: 30px;
+        }
+    }
+
 
 }
