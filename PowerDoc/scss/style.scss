@@ -39,7 +39,7 @@
 
 * {
     margin: 0;
-    // box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 // HEADER
@@ -142,6 +142,7 @@ nav {
 .hero__page {
     margin-top: 200px;
     padding-bottom: 180px;
+    position: relative;
 
     &__inner {
         display: flex;
@@ -172,6 +173,12 @@ nav {
         max-width: 692px;
         min-width: 288px;
     }
+
+    .test {
+        position: absolute;
+        width: 100%;
+        max-width: 822px;
+    }
 }
 
 // CONSULT POPUP
@@ -199,7 +206,9 @@ nav {
 
         form {
             h3 {
-                @include section-header-style;
+                @include section-header-style {
+                    font-size: 24px;
+                }
 
                 br {
                     display: none;
@@ -283,11 +292,12 @@ nav {
     }
 
     &__title {
-        @include section-header-style;
+        @include section-header-style {
+            font-size: 24px;
+        }
     }
 
     &__slider {
-        position: relative;
         margin-top: 32px;
         border-radius: 10px;
         box-shadow: 0px 8px 50px rgba(153, 153, 153, 0.3);
@@ -297,53 +307,70 @@ nav {
         }
 
         &__el__inner {
+            position: relative;
             display: flex;
-            justify-content: space-between;
+            // justify-content: space-between;
             // border-radius: 10px;
             // border: 2px solid white;
+            overflow: hidden;
 
 
         }
 
         &__text {
-            // padding-top: 48px;
-            // padding-left: 64px;
-            padding-top: 3.5%;
-            padding-left: 5%;
-            padding-bottom: 50px;
-            // padding: 3.5% 0 0 5.5%;
-            // height: 297px;
-
+            // padding-top: 3.5%;
+            // padding-left: 5%;
+            // padding-bottom: 48px;
+            padding: 3.5% 0 0 5%;
         }
 
-        &__img {
-            width: 60%;
+        &__title {
+            font-family: 'Proxima Nova Ex', sans-serif;
+            font-size: 24px;
+            line-height: 29px;
+            color: #181941;
+        }
 
+        &__capture {
+            @include content-text-style;
+            margin: 10px 0;
+        }
+
+        &__subtext {
+            @include content-text-style;
+        }
+
+        img {
+            width: 60%;
         }
 
         .prevArrow,
         .nextArrow {
             position: absolute;
-            bottom: 48px;
-            // width: 15px;
-            // height: auto;
+            bottom: 10%;
+            height: 3px;
             font-size: 0;
             border: 0;
             outline: none;
+            transform: scale(3);
+            z-index: 9;
+
+            &:hover {
+                cursor: pointer;
+            }
         }
 
         .prevArrow {
-            left: 64px;
-            background: url('../images/nextArrow.svg') no-repeat center;
+            left: 6%;
+            background: url('../images/prevArrow.svg') no-repeat center;
             background-size: cover;
-            transform: rotate(180deg) scale(3);
+
         }
 
         .nextArrow {
-            left: 148px;
+            left: 11%;
             background: url('../images/nextArrow.svg') no-repeat center;
             background-size: cover;
-            transform: scale(3);
 
         }
     }
@@ -391,6 +418,14 @@ nav {
     .hero__page__title {
         br.second-br {
             display: none;
+        }
+    }
+
+    .service__slider {
+
+        .prevArrow,
+        .nextArrow {
+            bottom: 13%;
         }
     }
 }
@@ -503,23 +538,27 @@ nav {
             flex-direction: column-reverse;
         }
 
-        &__img {
+        img {
             align-self: center;
-        }
-
-
-
-        &__img {
             width: 100%;
+
         }
 
         &__text {
-            // padding-bottom: 40px;
+            padding-bottom: 72px;
         }
 
-        .prevArrow,
+        &__title {
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        .prevArrow {
+            left: 7%;
+        }
+
         .nextArrow {
-            bottom: 30px;
+            left: 104px;
         }
     }
 

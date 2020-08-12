@@ -26,6 +26,7 @@ close__btn.addEventListener("click", () => {
 
 $(document).ready(function () {
     $(".service__slider").slick({
+        arrows: true,
         prevArrow: '<button class="prevArrow"></button>',
         nextArrow: '<button class="nextArrow"></button>'
     });

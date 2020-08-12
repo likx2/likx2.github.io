@@ -25,6 +25,8 @@
 
 * {
   margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 header {
@@ -63,6 +65,7 @@ nav a {
   font-size: 16px;
   font-style: normal;
   font-weight: normal;
+  line-height: 25px;
   color: #181941;
   text-decoration: none;
   font-size: 18px;
@@ -164,6 +167,7 @@ nav a:hover {
 .hero__page {
   margin-top: 200px;
   padding-bottom: 180px;
+  position: relative;
 }
 
 .hero__page__inner {
@@ -197,6 +201,7 @@ nav a:hover {
   font-size: 16px;
   font-style: normal;
   font-weight: normal;
+  line-height: 25px;
   color: #181941;
   line-height: 25px;
 }
@@ -205,6 +210,12 @@ nav a:hover {
   width: 60%;
   max-width: 692px;
   min-width: 288px;
+}
+
+.hero__page .test {
+  position: absolute;
+  width: 100%;
+  max-width: 822px;
 }
 
 .consult__popup {
@@ -247,6 +258,12 @@ nav a:hover {
   color: #181941;
 }
 
+@media (max-width: 620px) {
+  .consult__popup__content form h3 {
+    font-size: 24px;
+  }
+}
+
 .consult__popup__content form h3 br {
   display: none;
 }
@@ -272,6 +289,7 @@ nav a:hover {
   font-size: 16px;
   font-style: normal;
   font-weight: normal;
+  line-height: 25px;
   color: #181941;
 }
 
@@ -280,6 +298,7 @@ nav a:hover {
   font-size: 16px;
   font-style: normal;
   font-weight: normal;
+  line-height: 25px;
   color: #181941;
 }
 
@@ -288,6 +307,7 @@ nav a:hover {
   font-size: 16px;
   font-style: normal;
   font-weight: normal;
+  line-height: 25px;
   color: #181941;
 }
 
@@ -296,6 +316,7 @@ nav a:hover {
   font-size: 16px;
   font-style: normal;
   font-weight: normal;
+  line-height: 25px;
   color: #181941;
 }
 
@@ -392,8 +413,13 @@ nav a:hover {
   color: #181941;
 }
 
+@media (max-width: 620px) {
+  .service__title {
+    font-size: 24px;
+  }
+}
+
 .service__slider {
-  position: relative;
   margin-top: 32px;
   border-radius: 10px;
   -webkit-box-shadow: 0px 8px 50px rgba(153, 153, 153, 0.3);
@@ -405,47 +431,75 @@ nav a:hover {
 }
 
 .service__slider__el__inner {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  overflow: hidden;
 }
 
 .service__slider__text {
-  padding-top: 3.5%;
-  padding-left: 5%;
-  padding-bottom: 50px;
+  padding: 3.5% 0 0 5%;
 }
 
-.service__slider__img {
+.service__slider__title {
+  font-family: 'Proxima Nova Ex', sans-serif;
+  font-size: 24px;
+  line-height: 29px;
+  color: #181941;
+}
+
+.service__slider__capture {
+  font-family: 'Proxima Nova Rg', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 25px;
+  color: #181941;
+  margin: 10px 0;
+}
+
+.service__slider__subtext {
+  font-family: 'Proxima Nova Rg', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 25px;
+  color: #181941;
+}
+
+.service__slider img {
   width: 60%;
 }
 
 .service__slider .prevArrow,
 .service__slider .nextArrow {
   position: absolute;
-  bottom: 48px;
+  bottom: 10%;
+  height: 3px;
   font-size: 0;
   border: 0;
   outline: none;
+  -webkit-transform: scale(3);
+          transform: scale(3);
+  z-index: 9;
+}
+
+.service__slider .prevArrow:hover,
+.service__slider .nextArrow:hover {
+  cursor: pointer;
 }
 
 .service__slider .prevArrow {
-  left: 64px;
-  background: url("../images/nextArrow.svg") no-repeat center;
+  left: 6%;
+  background: url("../images/prevArrow.svg") no-repeat center;
   background-size: cover;
-  -webkit-transform: rotate(180deg) scale(3);
-          transform: rotate(180deg) scale(3);
 }
 
 .service__slider .nextArrow {
-  left: 148px;
+  left: 11%;
   background: url("../images/nextArrow.svg") no-repeat center;
   background-size: cover;
-  -webkit-transform: scale(3);
-          transform: scale(3);
 }
 
 .slick-active,
@@ -462,6 +516,10 @@ nav a:hover {
 @media (min-width: 1200px) {
   .hero__page__title br.second-br {
     display: none;
+  }
+  .service__slider .prevArrow,
+  .service__slider .nextArrow {
+    bottom: 13%;
   }
 }
 
@@ -557,17 +615,24 @@ nav a:hover {
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
   }
-  .service__slider__img {
+  .service__slider img {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
-  }
-  .service__slider__img {
     width: 100%;
   }
-  .service__slider .prevArrow,
+  .service__slider__text {
+    padding-bottom: 72px;
+  }
+  .service__slider__title {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .service__slider .prevArrow {
+    left: 7%;
+  }
   .service__slider .nextArrow {
-    bottom: 30px;
+    left: 104px;
   }
 }
 /*# sourceMappingURL=style.css.map */
