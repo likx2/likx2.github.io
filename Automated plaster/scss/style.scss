@@ -649,16 +649,114 @@ ul.card-text {
     line-height: 1;
     vertical-align: middle;
   }
-
-  // .surface {
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: center;
-  //   height: 100%;
-  //   margin: 0;
-  // }
 }
 
+// Fears
+.fears {
+  padding: 12rem 0;
+  position: relative;
+
+  &_title {
+    @include bold;
+    font-size: 3.6rem;
+    text-align: center;
+  }
+
+  &_row {
+    margin-top: 9rem;
+  }
+
+  &_left_block,
+  &_right_block {
+    height: 38rem;
+    padding: 4rem;
+  }
+
+  &_left_block {
+    border: 2px solid #e8e8e8;
+  }
+
+  &_right_block {
+    border: 2px solid #358015;
+
+    @media(max-width:768px) {
+      margin-top: 2rem;
+    }
+  }
+
+  &_left_subtitle,
+  &_right_subtitle {
+    @include bold;
+    font-size: 2.1rem;
+  }
+
+  &_left_subtitle {
+    color: #989898;
+  }
+
+  &_right_subtitle {
+    color: $text_color;
+  }
+
+  &_text {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    line-height: 1.8rem;
+  }
+
+  &_left_text,
+  &_right_text {
+    @include reg;
+    font-size: 1.6rem;
+    color: $text_color;
+    padding-left: 5rem;
+  }
+
+  &_left_text {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      background: url('../images/fears/fears-cansel.svg') no-repeat center;
+      background-size: cover;
+    }
+  }
+
+  &_right_text {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: inline-block;
+      width: 2.6rem;
+      height: 2rem;
+      background: url('../images/fears/fears-checked.svg') no-repeat center;
+      background-size: cover;
+    }
+  }
+
+  &_img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-60%);
+    bottom: 0;
+
+    @media(max-width:768px) {
+      display: none;
+    }
+  }
+}
 
 
 
@@ -724,6 +822,10 @@ ul.card-text {
   .scheme__icon {
     margin-top: 2rem;
   }
+
+  .fears_img {
+    transform: translate(-60%, 10%) scale(0.85);
+  }
 }
 
 @media(max-width: 45rem) {
@@ -731,11 +833,3 @@ ul.card-text {
     width: 30rem;
   }
 }
-
-// @media (max-width: 768px) {
-
-//   .input-label-1,
-//   .input-label-2 {
-//     padding: 0;
-//   }
-// }

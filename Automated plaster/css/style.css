@@ -688,6 +688,121 @@ ul.card-text li::before {
   vertical-align: middle;
 }
 
+.fears {
+  padding: 12rem 0;
+  position: relative;
+}
+
+.fears_title {
+  font-family: "ProximaNova_Bold", sans-serif;
+  font-size: 3.6rem;
+  text-align: center;
+}
+
+.fears_row {
+  margin-top: 9rem;
+}
+
+.fears_left_block, .fears_right_block {
+  height: 38rem;
+  padding: 4rem;
+}
+
+.fears_left_block {
+  border: 2px solid #e8e8e8;
+}
+
+.fears_right_block {
+  border: 2px solid #358015;
+}
+
+@media (max-width: 768px) {
+  .fears_right_block {
+    margin-top: 2rem;
+  }
+}
+
+.fears_left_subtitle, .fears_right_subtitle {
+  font-family: "ProximaNova_Bold", sans-serif;
+  font-size: 2.1rem;
+}
+
+.fears_left_subtitle {
+  color: #989898;
+}
+
+.fears_right_subtitle {
+  color: #1a1820;
+}
+
+.fears_text {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  line-height: 1.8rem;
+}
+
+.fears_left_text, .fears_right_text {
+  font-family: "ProximaNova_Reg", sans-serif;
+  font-size: 1.6rem;
+  color: #1a1820;
+  padding-left: 5rem;
+}
+
+.fears_left_text {
+  position: relative;
+}
+
+.fears_left_text::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background: url("../images/fears/fears-cansel.svg") no-repeat center;
+  background-size: cover;
+}
+
+.fears_right_text {
+  position: relative;
+}
+
+.fears_right_text::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  width: 2.6rem;
+  height: 2rem;
+  background: url("../images/fears/fears-checked.svg") no-repeat center;
+  background-size: cover;
+}
+
+.fears_img {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-60%);
+          transform: translateX(-60%);
+  bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .fears_img {
+    display: none;
+  }
+}
+
 @media (max-width: 1200px) {
   .pluses_row {
     margin-top: 0;
@@ -739,6 +854,10 @@ ul.card-text li::before {
   }
   .scheme__icon {
     margin-top: 2rem;
+  }
+  .fears_img {
+    -webkit-transform: translate(-60%, 10%) scale(0.85);
+            transform: translate(-60%, 10%) scale(0.85);
   }
 }
 
