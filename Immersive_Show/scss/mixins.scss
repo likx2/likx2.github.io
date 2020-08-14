@@ -1,0 +1,32 @@
+@mixin content_text_style {
+    font-family: 'Open Sans',
+        sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #3c3c3a;
+}
+
+@mixin header_font {
+    font-family: 'Bebas Neue',
+        cursive;
+}
+
+@mixin header_style($color) {
+    font-size: 160px;
+    line-height: 140px;
+    font-weight: 700;
+    font-family: 'Bebas Neue',
+        cursive;
+    color: $color;
+
+}
+
+@mixin light_brown_text {
+    font-size: 24px;
+    letter-spacing: 5px;
+    color: #b97501;
+    font-weight: 600;
+    font-family: 'Open Sans',
+        sans-serif;
+}
