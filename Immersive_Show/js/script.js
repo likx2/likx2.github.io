@@ -9,3 +9,11 @@ menubar.addEventListener('click', () => {
     lines[1].classList.toggle('active-line-2');
     lines[2].classList.toggle('active-line-3');
 })
+
+// Scroll
+$(".scroll").click(function () {
+    $('html,body').animate({
+            scrollTop: $(".what").offset().top
+        },
+        'slow');
+});
