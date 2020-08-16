@@ -803,6 +803,69 @@ ul.card-text li::before {
   }
 }
 
+.materials {
+  padding-top: 11rem;
+  padding-bottom: 9rem;
+  text-align: center;
+  color: #1a1820;
+}
+
+.materials-title {
+  font-family: "ProximaNova_Bold", sans-serif;
+  font-size: 3.6rem;
+}
+
+.materials-subtitle {
+  font-family: "ProximaNova_Reg", sans-serif;
+  font-size: 1.9rem;
+  margin: 5rem 0;
+}
+
+.materials__el {
+  position: relative;
+}
+
+@media (max-width: 992px) {
+  .materials__el {
+    margin-bottom: 3rem;
+  }
+}
+
+.materials-name {
+  font-family: "ProximaNova_Bold", sans-serif;
+  font-size: 2.2rem;
+}
+
+.materials-text {
+  font-family: "ProximaNova_Reg", sans-serif;
+  font-size: 1.9rem;
+  line-height: 1.9rem;
+  margin: 3rem 0;
+}
+
+.materials a {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-family: "ProximaNova_Reg", sans-serif;
+  font-size: 1.6rem;
+  text-decoration: underline;
+  color: #6ba253;
+}
+
+.materials .down-text {
+  font-family: "ProximaNova_Reg", sans-serif;
+  font-size: 2rem;
+  margin-top: 7rem;
+}
+
+.materials .down-text a {
+  position: static;
+  font-size: 2rem;
+}
+
 @media (max-width: 1200px) {
   .pluses_row {
     margin-top: 0;

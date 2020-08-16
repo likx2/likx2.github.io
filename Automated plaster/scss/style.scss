@@ -758,7 +758,68 @@ ul.card-text {
   }
 }
 
+// Materials
+.materials {
+  padding-top: 11rem;
+  padding-bottom: 9rem;
+  text-align: center;
+  color: $text_color;
 
+  &-title {
+    @include bold;
+    font-size: 3.6rem;
+  }
+
+  &-subtitle {
+    @include reg;
+    font-size: 1.9rem;
+    margin: 5rem 0;
+
+  }
+
+  &__el {
+    position: relative;
+
+    @media(max-width: 992px) {
+      margin-bottom: 3rem;
+    }
+
+  }
+
+  &-name {
+    @include bold;
+    font-size: 2.2rem;
+  }
+
+  &-text {
+    @include reg;
+    font-size: 1.9rem;
+    line-height: 1.9rem;
+    margin: 3rem 0;
+  }
+
+  a {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    @include reg;
+    font-size: 1.6rem;
+    text-decoration: underline;
+    color: #6ba253;
+  }
+
+  .down-text {
+    @include reg;
+    font-size: 2rem;
+    margin-top: 7rem;
+
+    a {
+      position: static;
+      font-size: 2rem;
+    }
+  }
+}
 
 
 // Media
