@@ -866,6 +866,40 @@ ul.card-text li::before {
   font-size: 2rem;
 }
 
+.perform {
+  padding-top: 11rem;
+  padding-bottom: 13rem;
+  background: url("../images/perform/perform-bg.png") no-repeat center;
+  background-size: cover;
+}
+
+.perform-title {
+  font-family: "ProximaNova_Bold", sans-serif;
+  font-size: 4rem;
+  line-height: 5.8rem;
+  text-transform: uppercase;
+  color: #292929;
+}
+
+@media (max-width: 768px) {
+  .perform-title {
+    font-size: 2.5rem;
+  }
+}
+
+.perform-text {
+  font-family: "ProximaNova_Reg", sans-serif;
+  font-size: 2.4rem;
+  margin: 4rem 0;
+  color: #292929;
+}
+
+@media (max-width: 768px) {
+  .perform-text {
+    font-size: 2rem;
+  }
+}
+
 @media (max-width: 1200px) {
   .pluses_row {
     margin-top: 0;

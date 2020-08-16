@@ -821,6 +821,36 @@ ul.card-text {
   }
 }
 
+// Perform
+.perform {
+  padding-top: 11rem;
+  padding-bottom: 13rem;
+  background: url('../images/perform/perform-bg.png') no-repeat center;
+  background-size: cover;
+
+  &-title {
+    @include bold;
+    font-size: 4rem;
+    line-height: 5.8rem;
+    text-transform: uppercase;
+    color: $header_Tcolor;
+
+    @media(max-width:768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &-text {
+    @include reg;
+    font-size: 2.4rem;
+    margin: 4rem 0;
+    color: $header_Tcolor;
+
+    @media(max-width:768px) {
+      font-size: 2rem;
+    }
+  }
+}
 
 // Media
 @media(max-width: 1200px) {
