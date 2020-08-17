@@ -819,9 +819,8 @@
     }
 
     .description {
-        @include header_font;
+        font-family: 'Bebas Neue Reg', sans-serif;
         font-size: 60px;
-        font-weight: 400;
         line-height: 50px;
         letter-spacing: 12px;
         color: $light_brown;
@@ -860,10 +859,12 @@
 
     &__right {
         max-width: 520px;
+        margin-left: 20px;
 
         @media(max-width: 768px) {
             width: 100%;
             max-width: 100%;
+            margin-left: 0;
         }
     }
 
@@ -946,9 +947,8 @@
     }
 
     .description {
-        @include header_font;
+        font-family: 'Bebas Neue Reg', sans-serif;
         font-size: 60px;
-        font-weight: 400;
         line-height: 50px;
         letter-spacing: 12px;
         color: $light_brown;
@@ -989,10 +989,13 @@
 
     &__right {
         max-width: 520px;
+        margin-left: 20px;
 
         @media(max-width: 768px) {
             width: 100%;
             max-width: 100%;
+            margin-left: 0;
+
         }
     }
 
