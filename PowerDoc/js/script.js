@@ -31,3 +31,13 @@ $(document).ready(function () {
         nextArrow: '<button class="nextArrow"></button>'
     });
 });
+
+
+// Workers Slider
+$(document).ready(function () {
+    $(".workers__slider").slick({
+        arrows: true,
+        prevArrow: '<button class="prev-btn"></button>',
+        nextArrow: '<button class="next-btn"></button>'
+    });
+});

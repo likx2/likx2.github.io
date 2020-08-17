@@ -283,6 +283,7 @@ nav {
 .service {
     padding-top: 138px;
     padding-bottom: 80px;
+    background-color: #FAFAFA;
 
     &_container {
         width: 95%;
@@ -382,6 +383,55 @@ nav {
     outline: none;
 }
 
+// Workers
+.workers {
+    padding-top: 80px;
+
+
+    &-title {
+        @include section-header-style;
+        margin-bottom: 32px;
+    }
+
+    &__slider {
+        position: relative;
+        box-shadow: 0px 8px 50px rgba(153, 153, 153, 0.3);
+        border-radius: 10px;
+
+        // &__item,
+        // .slick-slide {
+        //     max-height: 100%;
+
+        // }
+
+        .item__flex {
+            // display: flex;
+        }
+
+        .prev-btn,
+        .next-btn {
+            position: absolute;
+            bottom: 20px;
+        }
+
+        .prev-btn {
+            right: 100px;
+        }
+
+        .next-btn {
+            right: 20px;
+        }
+
+        .img-box {
+
+
+            img {
+                // align-self: flex-end;
+            }
+        }
+
+    }
+}
 
 
 

@@ -9,7 +9,10 @@
 
 @mixin header_font {
     font-family: 'Bebas Neue',
-        cursive;
+        sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-style: normal;
 }
 
 @mixin header_style($color) {
@@ -17,7 +20,8 @@
     line-height: 140px;
     font-weight: 700;
     font-family: 'Bebas Neue',
-        cursive;
+        sans-serif;
+    text-transform: uppercase;
     color: $color;
 
 }
