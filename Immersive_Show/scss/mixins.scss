@@ -11,14 +11,12 @@
     font-family: 'Bebas Neue',
         sans-serif;
     text-transform: uppercase;
-    font-weight: 700;
     font-style: normal;
 }
 
 @mixin header_style($color) {
     font-size: 160px;
     line-height: 140px;
-    font-weight: 700;
     font-family: 'Bebas Neue',
         sans-serif;
     text-transform: uppercase;

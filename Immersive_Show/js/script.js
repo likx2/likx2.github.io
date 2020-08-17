@@ -68,7 +68,7 @@ window.addEventListener('DOMContentLoaded', () => {
             'slow');
     });
     let flag = false;
-    // Scroll
+    // Add content.html
     window.addEventListener('scroll', addContent);
 
     function addContent() {

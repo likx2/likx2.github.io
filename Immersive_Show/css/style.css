@@ -1,16 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400;600;700;800&display=swap");
 @font-face {
-  font-family: 'Bebas Neue';
-  src: local("Bebas_Neue Regular"), local("BebasNeueRegular"), url("../fonts/Bebas_Neue/") format("woff2"), url("../fonts/Bebas_Neue/bebasneueregular.woff") format("woff"), url("../fonts/Bebas_Neue/bebasneueregular.ttf") format("truetype");
-  font-weight: 400;
+  font-family: 'Bebas Neue Reg';
+  src: url("../fonts/BebasNeue/");
+  src: url("../fonts/BebasNeue/?#iefix") format("embedded-opentype"), url("../fonts/BebasNeue/BebasNeueRegular.woff2") format("woff2"), url("../fonts/BebasNeue/BebasNeueRegular.woff") format("woff"), url("../fonts/BebasNeue/BebasNeueRegular.ttf") format("truetype"), url("../fonts/BebasNeue/BebasNeueRegular.svg#BebasNeueRegular") format("svg");
+  font-weight: normal;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'Bebas Neue';
-  src: local("Bebas Neue Bold"), local("BebasNeueBold"), url("../fonts/Bebas_Neue/bebasneuebold.woff2") format("woff2"), url("../fonts/Bebas_Neue/bebasneuebold.woff") format("woff"), url("../fonts/Bebas_Neue/bebasneuebold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
+  font-display: swap;
 }
 
 * {
@@ -65,8 +60,7 @@
 }
 
 .hero-page header .logo-text {
-  font-family: 'Bebas Neue', sans-serif;
-  font-weight: 400;
+  font-family: 'Bebas Neue Reg', sans-serif;
   font-style: normal;
   font-size: 36px;
   line-height: 58px;
@@ -229,7 +223,6 @@
 .hero-page .main__inner .title {
   font-size: 160px;
   line-height: 140px;
-  font-weight: 700;
   font-family: 'Bebas Neue', sans-serif;
   text-transform: uppercase;
   color: white;
@@ -265,7 +258,6 @@
 .intro-title {
   font-family: 'Bebas Neue', sans-serif;
   text-transform: uppercase;
-  font-weight: 700;
   font-style: normal;
   font-size: 92px;
   color: #ffffff;
@@ -313,7 +305,6 @@
 .challenges-title {
   font-size: 160px;
   line-height: 140px;
-  font-weight: 700;
   font-family: 'Bebas Neue', sans-serif;
   text-transform: uppercase;
   color: #060022;
@@ -465,7 +456,6 @@
 .attract-title {
   font-size: 160px;
   line-height: 140px;
-  font-weight: 700;
   font-family: 'Bebas Neue', sans-serif;
   text-transform: uppercase;
   color: white;
@@ -505,7 +495,6 @@
 .what-title {
   font-size: 160px;
   line-height: 140px;
-  font-weight: 700;
   font-family: 'Bebas Neue', sans-serif;
   text-transform: uppercase;
   color: white;
@@ -571,7 +560,6 @@
   font-family: "Bebas Neue", cursive;
   font-size: 92px;
   line-height: 92px;
-  font-weight: 700;
   color: #060022;
 }
 
@@ -663,7 +651,6 @@
 .facts-title {
   font-size: 160px;
   line-height: 140px;
-  font-weight: 700;
   font-family: 'Bebas Neue', sans-serif;
   text-transform: uppercase;
   color: #060022;
@@ -720,7 +707,6 @@
 .benefits-title {
   font-size: 160px;
   line-height: 140px;
-  font-weight: 700;
   font-family: 'Bebas Neue', sans-serif;
   text-transform: uppercase;
   color: white;
@@ -793,10 +779,9 @@
 }
 
 .benefits-subtitle {
-  font-family: "Bebas Neue", cursive;
+  font-family: "Bebas Neue", sans-serif;
   font-size: 60px;
   line-height: 68px;
-  font-weight: 700;
   color: #ffffff;
 }
 
@@ -810,11 +795,9 @@
 .benefits .emotions {
   font-family: 'Bebas Neue', sans-serif;
   text-transform: uppercase;
-  font-weight: 700;
   font-style: normal;
   font-size: 92px;
   line-height: 90px;
-  font-weight: 700;
   margin-top: 40px;
   color: #ffffff;
 }
@@ -883,7 +866,6 @@
 .concept-title {
   font-size: 160px;
   line-height: 140px;
-  font-weight: 700;
   font-family: 'Bebas Neue', sans-serif;
   text-transform: uppercase;
   color: white;
@@ -932,7 +914,6 @@
 .ufo-title {
   font-family: 'Bebas Neue', sans-serif;
   text-transform: uppercase;
-  font-weight: 700;
   font-style: normal;
   font-size: 92px;
   color: #060022;
@@ -965,7 +946,6 @@
 .ufo .description {
   font-family: 'Bebas Neue', sans-serif;
   text-transform: uppercase;
-  font-weight: 700;
   font-style: normal;
   font-size: 60px;
   font-weight: 400;
@@ -1092,7 +1072,6 @@
 .stars-title {
   font-family: 'Bebas Neue', sans-serif;
   text-transform: uppercase;
-  font-weight: 700;
   font-style: normal;
   font-size: 92px;
   color: #060022;
@@ -1125,7 +1104,6 @@
 .stars .description {
   font-family: 'Bebas Neue', sans-serif;
   text-transform: uppercase;
-  font-weight: 700;
   font-style: normal;
   font-size: 60px;
   font-weight: 400;
@@ -1235,7 +1213,6 @@
 .tech-title {
   font-size: 160px;
   line-height: 140px;
-  font-weight: 700;
   font-family: 'Bebas Neue', sans-serif;
   text-transform: uppercase;
   color: #060022;
@@ -1281,7 +1258,6 @@ footer .footer-title {
   font-size: 92px;
   line-height: 70px;
   color: #ffffff;
-  font-weight: 700;
   margin-bottom: 30px;
 }
 
@@ -1347,7 +1323,6 @@ footer p {
 
 footer h2 {
   font-size: 24px;
-  font-weight: 700;
 }
 
 @media (max-width: 768px) {
