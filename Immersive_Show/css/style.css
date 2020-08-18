@@ -1,8 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400;600;700;800&display=swap");
 @font-face {
-  font-family: 'Bebas Neue Reg';
-  src: url("../fonts/BebasNeue/");
-  src: url("../fonts/BebasNeue/?#iefix") format("embedded-opentype"), url("../fonts/BebasNeue/BebasNeueRegular.woff2") format("woff2"), url("../fonts/BebasNeue/BebasNeueRegular.woff") format("woff"), url("../fonts/BebasNeue/BebasNeueRegular.ttf") format("truetype"), url("../fonts/BebasNeue/BebasNeueRegular.svg#BebasNeueRegular") format("svg");
+  font-family: 'Bebas Neue Book';
+  src: url("../fonts/BebasNeueBook/");
+  src: url("../fonts/BebasNeueBook/?#iefix") format("embedded-opentype"), url("../fonts/BebasNeueBook/BebasNeueBook.woff2") format("woff2"), url("../fonts/BebasNeueBook/BebasNeueBook.woff") format("woff"), url("../fonts/BebasNeueBook/BebasNeueBook.ttf") format("truetype"), url("../fonts/BebasNeueBook/BebasNeueBook.svg#BebasNeueBook") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -60,7 +59,7 @@
 }
 
 .hero-page header .logo-text {
-  font-family: 'Bebas Neue Reg', sans-serif;
+  font-family: 'Bebas Neue Book', sans-serif;
   font-style: normal;
   font-size: 36px;
   line-height: 58px;
@@ -633,6 +632,12 @@
 }
 
 @media (max-width: 992px) {
+  .facts__source {
+    margin: 30px auto 0 auto;
+  }
+}
+
+@media (max-width: 992px) {
   .facts__pictures {
     text-align: center;
   }
@@ -687,7 +692,10 @@
 
 @media (max-width: 992px) {
   .benefits__inner {
-    display: block;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
   }
 }
 
@@ -700,7 +708,7 @@
 @media (max-width: 768px) {
   .benefits__left {
     margin-top: 0;
-    margin-bottom: 50px;
+    margin-bottom: 0px;
   }
 }
 
@@ -774,7 +782,9 @@
 
 @media (max-width: 768px) {
   .benefits__right {
+    padding-top: 50px;
     padding-left: 10px;
+    padding-bottom: 50px;
   }
 }
 
@@ -829,7 +839,7 @@
 .benefits img {
   position: absolute;
   right: 0;
-  bottom: 0;
+  top: 0;
   width: 100%;
   max-width: 872px;
   height: 100%;

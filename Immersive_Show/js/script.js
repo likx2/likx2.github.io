@@ -9,7 +9,6 @@ window.addEventListener('DOMContentLoaded', () => {
         lines[0].classList.toggle('active-line-1');
         lines[1].classList.toggle('active-line-2');
         lines[2].classList.toggle('active-line-3');
-        addContent();
     })
 
     // Scroll
@@ -67,14 +66,32 @@ window.addEventListener('DOMContentLoaded', () => {
             },
             'slow');
     });
-    let flag = false;
+    let flagScroll = false;
+    let flagClick = false;
     // Add content.html
-    window.addEventListener('scroll', addContent);
+    window.addEventListener('scroll', addContentByScroll);
+    menubar.addEventListener('click', addContentByClick);
 
-    function addContent() {
-        $.get('content.html', function (result) {
-            $('body').append(result);
-            window.removeEventListener('scroll', addContent);
-        });
+
+    function addContentByScroll() {
+        if (!flagClick) {
+            $.get('content.html', function (result) {
+                $('body').append(result);
+                window.removeEventListener('scroll', addContentByScroll);
+                flagScroll = true;
+            });
+        }
     }
+
+    function addContentByClick() {
+        if (!flagScroll) {
+            $.get('content.html', function (result) {
+                $('body').append(result);
+                menubar.removeEventListener('click', addContentByClick);
+                flagClick = true;
+            });
+        }
+
+    }
+
 });
