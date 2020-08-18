@@ -74,24 +74,25 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     function addContentByScroll() {
-        if (!flagClick) {
+        if (!flagScroll && !flagClick) {
             $.get('content.html', function (result) {
                 $('body').append(result);
-                window.removeEventListener('scroll', addContentByScroll);
-                flagScroll = true;
             });
+            flagScroll = true;
+        } else {
+            window.removeEventListener('scroll', addContentByScroll);
         }
     }
 
     function addContentByClick() {
-        if (!flagScroll) {
+        if (!flagScroll && !flagClick) {
             $.get('content.html', function (result) {
                 $('body').append(result);
-                menubar.removeEventListener('click', addContentByClick);
-                flagClick = true;
             });
+            flagClick = true;
+        } else {
+            menubar.removeEventListener('click', addContentByClick);
         }
-
     }
 
 });
