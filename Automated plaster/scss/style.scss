@@ -852,6 +852,111 @@ ul.card-text {
   }
 }
 
+// Upsell
+.upsell {
+  padding-top: 11rem;
+  padding-bottom: 10rem;
+  background-color: #286b0a;
+
+  &-title {
+    @include bold;
+    font-size: 3.6rem;
+    text-align: center;
+    color: #fcfcfc;
+
+  }
+
+  &-subtitle {
+    @include reg;
+    font-size: 1.9rem;
+    text-align: center;
+    margin: 4rem 0;
+    color: #fcfcfc;
+  }
+
+  &__flex {
+    display: flex;
+
+    @media(max-width: 772px) {
+      display: block;
+    }
+
+  }
+
+  &__item {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+    @media(max-width: 772px) {
+      margin-top: 4rem;
+    }
+  }
+
+  .mid-item {
+    margin: 0 2rem;
+
+    @media(max-width: 772px) {
+      margin-top: 4rem;
+    }
+  }
+
+
+
+  .img-box {
+    display: inline-block;
+    width: 100%;
+    min-height: 17rem;
+    max-width: 33rem;
+  }
+
+  .box-1 {
+    background: url('../images/upsell/upsell-1.png') no-repeat center;
+    background-size: cover;
+  }
+
+  .box-2 {
+    background: url('../images/upsell/upsell-2.png') no-repeat center;
+    background-size: cover;
+  }
+
+  .box-3 {
+    background: url('../images/upsell/upsell-3.png') no-repeat center;
+    background-size: cover;
+  }
+
+  h3 {
+    @include bold;
+    font-size: 2rem;
+    text-align: center;
+    margin: 3rem 0;
+    color: #fcfcfc;
+
+    @media(max-width: 772px) {
+      margin: 2rem 0;
+
+    }
+  }
+
+  button {
+    @include btn-style;
+    font-size: 1.6rem;
+    padding: 2rem 4rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
 // Media
 @media(max-width: 1200px) {
   .pluses_row {

@@ -900,6 +900,131 @@ ul.card-text li::before {
   }
 }
 
+.upsell {
+  padding-top: 11rem;
+  padding-bottom: 10rem;
+  background-color: #286b0a;
+}
+
+.upsell-title {
+  font-family: "ProximaNova_Bold", sans-serif;
+  font-size: 3.6rem;
+  text-align: center;
+  color: #fcfcfc;
+}
+
+.upsell-subtitle {
+  font-family: "ProximaNova_Reg", sans-serif;
+  font-size: 1.9rem;
+  text-align: center;
+  margin: 4rem 0;
+  color: #fcfcfc;
+}
+
+.upsell__flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 772px) {
+  .upsell__flex {
+    display: block;
+  }
+}
+
+.upsell__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+@media (max-width: 772px) {
+  .upsell__item {
+    margin-top: 4rem;
+  }
+}
+
+.upsell .mid-item {
+  margin: 0 2rem;
+}
+
+@media (max-width: 772px) {
+  .upsell .mid-item {
+    margin-top: 4rem;
+  }
+}
+
+.upsell .img-box {
+  display: inline-block;
+  width: 100%;
+  min-height: 17rem;
+  max-width: 33rem;
+}
+
+.upsell .box-1 {
+  background: url("../images/upsell/upsell-1.png") no-repeat center;
+  background-size: cover;
+}
+
+.upsell .box-2 {
+  background: url("../images/upsell/upsell-2.png") no-repeat center;
+  background-size: cover;
+}
+
+.upsell .box-3 {
+  background: url("../images/upsell/upsell-3.png") no-repeat center;
+  background-size: cover;
+}
+
+.upsell h3 {
+  font-family: "ProximaNova_Bold", sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  margin: 3rem 0;
+  color: #fcfcfc;
+}
+
+@media (max-width: 772px) {
+  .upsell h3 {
+    margin: 2rem 0;
+  }
+}
+
+.upsell button {
+  color: white;
+  background-color: #f8af01;
+  text-transform: uppercase;
+  border-radius: 8px;
+  border: 1px solid #ffba15;
+  font-family: "ProximaNova_Reg", sans-serif;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  font-size: 1.6rem;
+  padding: 2rem 4rem;
+}
+
+.upsell button:hover {
+  -webkit-filter: drop-shadow(0px 8px 6.5px rgba(0, 0, 0, 0.04));
+          filter: drop-shadow(0px 8px 6.5px rgba(0, 0, 0, 0.04));
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#d89800), to(#ffc743));
+  background-image: linear-gradient(0deg, #d89800 0%, #ffc743 100%);
+}
+
 @media (max-width: 1200px) {
   .pluses_row {
     margin-top: 0;
@@ -963,4 +1088,3 @@ ul.card-text li::before {
     width: 30rem;
   }
 }
-/*# sourceMappingURL=style.css.map */
