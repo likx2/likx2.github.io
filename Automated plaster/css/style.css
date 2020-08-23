@@ -1025,6 +1025,92 @@ ul.card-text li::before {
   background-image: linear-gradient(0deg, #d89800 0%, #ffc743 100%);
 }
 
+.contacts {
+  padding-top: 8rem;
+  background: url("../images/contacts/contacts-bg.png") no-repeat center;
+  background-size: cover;
+}
+
+.contacts-title {
+  font-family: "ProximaNova_Bold", sans-serif;
+  font-size: 3.6rem;
+  margin-bottom: 6rem;
+  color: #292929;
+}
+
+.contacts p,
+.contacts div {
+  font-family: "ProximaNova_Reg", sans-serif;
+  font-size: 1.8rem;
+  color: #292929;
+}
+
+.contacts p {
+  margin-bottom: 1.6rem;
+}
+
+.contacts .number,
+.contacts .mail,
+.contacts .requisits {
+  margin-bottom: 4rem;
+}
+
+.contacts .number a,
+.contacts .mail a,
+.contacts .requisits a {
+  font-family: "ProximaNova_Reg", sans-serif;
+  font-size: 1.8rem;
+  text-decoration: underline;
+  color: #292929;
+}
+
+.contacts form {
+  text-align: center;
+  margin-top: 1rem;
+  padding: 5rem 4.5rem;
+  background-color: white;
+  color: #292929;
+}
+
+.contacts form textarea {
+  margin-bottom: 1.6rem;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #dddddd;
+  outline: none;
+}
+
+.contacts form input {
+  display: block;
+  width: 100%;
+  height: 5.4rem;
+  margin: 2.4rem 0;
+  border-radius: 5px;
+  border: 1px solid #dddddd;
+  font-size: 1.6rem;
+}
+
+.contacts form input:focus {
+  outline: none;
+}
+
+footer {
+  padding: 4rem 0;
+}
+
+footer .mail {
+  font-family: "ProximaNova_Reg", sans-serif;
+  font-size: 1.8rem;
+  text-decoration: underline;
+  color: #292929;
+}
+
+footer .hours {
+  font-family: "ProximaNova_Reg", sans-serif;
+  font-size: 1.8rem;
+  color: #292929;
+}
+
 @media (max-width: 1200px) {
   .pluses_row {
     margin-top: 0;
