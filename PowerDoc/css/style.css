@@ -522,6 +522,18 @@ nav a:hover {
   margin-bottom: 32px;
 }
 
+@media (max-width: 620px) {
+  .workers-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 556px) {
+  .workers-title {
+    margin-bottom: 24px;
+  }
+}
+
 .workers__slider {
   position: relative;
   -webkit-box-shadow: 0px 8px 50px rgba(153, 153, 153, 0.3);
@@ -529,18 +541,182 @@ nav a:hover {
   border-radius: 10px;
 }
 
+.workers__slider .slick-track {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.workers__slider .slick-slide {
+  height: inherit !important;
+}
+
+.workers__slider .item__flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .workers__slider .item__flex {
+    display: block;
+  }
+}
+
+.workers__slider__media {
+  padding: 64px 20px 64px 20px;
+  max-width: 502px;
+}
+
+.workers__slider__media .status {
+  font-family: 'Proxima Nova B', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #576078;
+}
+
+.workers__slider__media .name {
+  font-family: 'Proxima Nova Ex', sans-serif;
+  font-size: 24px;
+  color: #181941;
+}
+
+@media (max-width: 768px) {
+  .workers__slider__media .name {
+    font-size: 18px;
+  }
+}
+
+.workers__slider__media p {
+  font-family: 'Proxima Nova Rg', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 25px;
+  color: #181941;
+  margin-top: 12px;
+  margin-bottom: 48px;
+}
+
+@media (max-width: 768px) {
+  .workers__slider__media p {
+    margin-top: 10px;
+    margin-bottom: 32px;
+  }
+}
+
+.workers__slider__media .more {
+  font-family: 'Proxima Nova B', sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #00D9B6;
+  background: #FAFAFA;
+  border-radius: 6px;
+  border: none;
+  padding: 12px 36px;
+}
+
+.workers__slider__media .more:hover {
+  cursor: pointer;
+}
+
+.workers__slider .img-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 60px;
+}
+
+.workers__slider .img-box img {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+@media (max-width: 576px) {
+  .workers__slider .img-box img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .workers__slider .img-box img {
+    margin: 0 auto;
+  }
+}
+
+.workers__slider .first-one {
+  padding: 0 40px;
+}
+
 .workers__slider .prev-btn,
 .workers__slider .next-btn {
   position: absolute;
-  bottom: 20px;
+  bottom: 10%;
+  height: 3px;
+  font-size: 0;
+  border: 0;
+  outline: none;
+  -webkit-transform: scale(3);
+          transform: scale(3);
+  z-index: 9;
+}
+
+.workers__slider .prev-btn:hover,
+.workers__slider .next-btn:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 576px) {
+  .workers__slider .prev-btn,
+  .workers__slider .next-btn {
+    bottom: 5%;
+  }
 }
 
 .workers__slider .prev-btn {
-  right: 100px;
+  right: 140px;
+  background: url("../images/prevArrow.svg") no-repeat center;
+  background-size: cover;
 }
 
 .workers__slider .next-btn {
-  right: 20px;
+  right: 60px;
+  background: url("../images/nextArrow.svg") no-repeat center;
+  background-size: cover;
+}
+
+.more-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  z-index: 20;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.more-popup-content {
+  max-width: 1200px;
+  max-height: 500px;
+  padding: 40px 0;
+  background-color: white;
 }
 
 @media (min-width: 710px) {
@@ -565,7 +741,7 @@ nav a:hover {
     text-align: center;
   }
   .consult__popup .close__btn {
-    margin: 32px 24px 0 0;
+    margin: 70px 24px 0 0;
   }
   .hero__page__text {
     text-align: left;
@@ -671,4 +847,3 @@ nav a:hover {
     left: 104px;
   }
 }
-/*# sourceMappingURL=style.css.map */
