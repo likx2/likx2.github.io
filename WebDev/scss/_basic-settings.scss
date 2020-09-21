@@ -7,12 +7,17 @@
 body {
     font-family: 'Roboto',
         sans-serif;
-    max-width: 1600px;
+    width: 1600px;
     margin: 0 auto;
 }
 
 .container {
     width: 90%;
-    max-width: 1062px;
+    width: 1062px;
     margin: 0 auto;
 }
+
+// section {
+//     width: 1600px;
+//     overflow-x: scroll;
+// }

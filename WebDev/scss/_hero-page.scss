@@ -8,8 +8,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 55%;
-            max-width: 583px;
+            width: 583px;
             margin: 0 auto;
 
             &-item {
@@ -37,11 +36,6 @@
                     opacity: 1;
                 }
             }
-
-            @media(max-width:768px) {
-                width: 100%;
-            }
-
         }
     }
 
@@ -50,7 +44,7 @@
         margin-top: 161px;
 
         &__inner {
-            width: 70%;
+            width: 735px;
             text-align: center;
             margin: 0 auto;
 
@@ -61,25 +55,14 @@
                 font-size: 64px;
                 line-height: 75px;
                 color: #FFFFFF;
-
-                @media(max-width: 768px) {
-                    font-size: 48px;
-                    line-height: 48px;
-                    letter-spacing: 3px;
-
-                }
             }
 
             p {
-                width: 65%;
+                width: 504px;
                 font-size: 18px;
                 line-height: 25px;
                 margin: 20px auto 30px auto;
                 color: #FFFFFF;
-
-                @media(max-width:768px) {
-                    width: 100%;
-                }
             }
 
             &-btn {
@@ -90,7 +73,7 @@
             &-media {
                 display: flex;
                 justify-content: space-between;
-                width: 30%;
+                width: 165px;
                 margin: 183px auto 0 auto;
 
                 &-link {
@@ -101,26 +84,15 @@
                     }
                 }
 
-                @media(max-width: 768px) {
-                    margin-top: 100px;
-                }
 
-                @media(max-width:576px) {
-                    width: 50%;
-                }
+
             }
 
-            @media(max-width: 1200px) {
-                width: 100%;
-            }
+
         }
 
-        @media(max-width: 768px) {
-            margin-top: 100px;
-        }
+
     }
 
-    @media(max-width: 768px) {
-        padding-bottom: 70px;
-    }
+
 }

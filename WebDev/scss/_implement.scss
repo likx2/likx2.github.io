@@ -10,11 +10,7 @@
             width: 50%;
 
             &-img {
-                width: 80%;
-
-                @media(max-width:576px) {
-                    display: none;
-                }
+                width: 407px;
             }
         }
 
@@ -22,7 +18,7 @@
             width: 50%;
 
             &-text {
-                width: 75%;
+                width: 407px;
 
                 &-title {
                     @include title-style;
@@ -37,19 +33,10 @@
                     @include btn-style;
                 }
 
-                @media(max-width:768px) {
-                    width: 100%;
-                }
             }
 
-            @media(max-width:576px) {
-                width: 100%;
-            }
         }
     }
 
-    @media(max-width:768px) {
-        padding: 64px 0;
-    }
 
 }

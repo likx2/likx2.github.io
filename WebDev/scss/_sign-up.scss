@@ -4,8 +4,7 @@
     background-size: cover;
 
     &__inner {
-        width: 70%;
-        max-width: 406px;
+        width: 406px;
         margin: 0 auto;
 
         &-title {
@@ -16,11 +15,6 @@
             line-height: 28px;
             text-transform: uppercase;
             color: #ffffff;
-
-            @media(max-width:576px) {
-                font-size: 20px;
-                line-height: 20px;
-            }
         }
 
         &-form {
@@ -64,14 +58,7 @@
                 }
             }
 
-            @media(max-width:768px) {
-                margin-top: 20px;
-            }
         }
-    }
-
-    @media(max-width:768px) {
-        padding: 120px 0;
     }
 
 }
