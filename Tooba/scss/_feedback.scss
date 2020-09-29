@@ -1,0 +1,140 @@
+.feedback {
+    padding: 128px 0;
+
+    &-title {
+        @include title-style;
+        text-align: center;
+
+        @media(max-width:768px) {
+            @include title-style-mobile;
+        }
+    }
+
+    &-subtext {
+        @include content-style(26px);
+        text-align: center;
+    }
+
+    &__slider {
+        position: relative;
+        margin-top: 48px;
+
+        &-card {
+            position: relative;
+            height: auto !important;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+            padding: 24px;
+            margin: 0 10px;
+
+
+            &-media {
+                display: flex;
+                align-items: center;
+
+                &-capture {
+                    margin-left: 16px;
+
+                    strong {
+                        font-size: 16px;
+                    }
+
+                    p {
+                        font-size: 14px;
+                        line-height: 20px;
+                        margin-top: 2px;
+                    }
+                }
+
+                .feedback-img {
+                    width: 64px;
+                    height: 64px;
+                }
+            }
+
+            &-text {
+                @include content-style(26px);
+            }
+
+            &-quotes {
+                position: absolute;
+                bottom: 16px;
+                right: 16px;
+                z-index: -1;
+            }
+        }
+
+        &-prev-btn,
+        &-next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+
+
+            @media(max-width: 768px) {
+                display: none !important;
+            }
+        }
+
+        &-prev-btn {
+            left: -3%;
+        }
+
+        &-next-btn {
+            right: -3%;
+        }
+
+        .slick-track {
+            display: flex !important;
+            padding: 10px 0;
+        }
+
+        .slick-slide {
+            height: inherit !important;
+        }
+
+        .slick-active,
+        .slick-current,
+        .slick-slide {
+            outline: none;
+        }
+
+        .slick-dots {
+            display: flex;
+            justify-content: center;
+
+            li {
+                margin: 12px;
+                outline: none;
+            }
+
+            button {
+                border: none;
+                font-size: 0;
+                width: 12px;
+                height: 12px;
+                border-radius: 100%;
+                background-color: #F1F1F1;
+                cursor: pointer;
+                outline: none;
+
+
+
+            }
+
+            .slick-active {
+                button {
+                    background-color: $green;
+                    outline: none;
+                }
+
+            }
+        }
+
+    }
+
+    @media(max-width: 768px) {
+        padding: 64px 0;
+    }
+}

@@ -1,0 +1,84 @@
+.founder {
+    padding: 80px 0;
+    background-color: #FAFAFA;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        margin: 0 auto;
+        box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.08);
+        border-radius: 8px;
+        background-color: #fff;
+
+        &__text {
+            width: 60%;
+            padding: 48px 0px 0px 48px;
+            font-size: 16px;
+
+            &-capture {
+                margin: 24px 0;
+            }
+
+            &-desc {
+                position: relative;
+                line-height: 26px;
+                font-style: italic;
+                z-index: 1;
+
+                &-quotes {
+                    position: absolute;
+                    left: -20px;
+                    top: -20px;
+                    z-index: -1;
+                }
+            }
+
+
+
+            &-name {
+                font-weight: 600;
+                color: $green;
+            }
+
+            &-status {
+                font-size: 14px;
+                line-height: 20px;
+                color: #757575;
+            }
+
+            @media(max-width:768px) {
+                padding: 32px 32px 0px 32px;
+                width: 100%;
+            }
+        }
+
+        &-img-box {
+            position: relative;
+            width: 40%;
+            height: 100%;
+            background: url('../images/founder/heart.png') no-repeat;
+
+            @media(max-width: 768px) {
+                width: 100%;
+                height: unset;
+                background-position: center;
+                background-size: cover;
+            }
+
+        }
+
+        &-img {
+            display: block;
+            max-width: 100%;
+
+            margin-left: auto;
+
+            @media(max-width:768px) {}
+        }
+
+        @media(max-width: 768px) {
+            display: block;
+        }
+    }
+}

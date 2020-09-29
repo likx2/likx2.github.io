@@ -1,0 +1,21 @@
+@mixin title-style {
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 64px;
+
+    span {
+        color: $green;
+    }
+}
+
+@mixin title-style-mobile {
+    font-size: 32px;
+    line-height: 38px;
+}
+
+@mixin content-style($l-height) {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: $l-height;
+    margin-top: 6px;
+}

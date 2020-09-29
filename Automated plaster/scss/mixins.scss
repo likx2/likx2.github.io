@@ -1,0 +1,24 @@
+// Font Style
+@mixin bold {
+  font-family: "ProximaNova_Bold", sans-serif;
+}
+
+@mixin reg {
+  font-family: "ProximaNova_Reg", sans-serif;
+}
+
+// Button Style
+@mixin btn-style {
+  color: white;
+  background-color: $btn_color;
+  text-transform: uppercase;
+  border-radius: 8px;
+  border: 1px solid #ffba15;
+  @include reg;
+  transition: all 0.2s;
+
+  &:hover {
+    filter: drop-shadow(0px 8px 6.5px rgba(0, 0, 0, 0.04));
+    background-image: linear-gradient(0deg, #d89800 0%, #ffc743 100%);
+  }
+}

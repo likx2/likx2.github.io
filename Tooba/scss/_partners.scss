@@ -1,0 +1,40 @@
+.partners {
+    padding-top: 128px;
+
+    &-title {
+        @include title-style;
+        text-align: center;
+
+        @media(max-width: 768px) {
+            @include title-style-mobile;
+
+        }
+    }
+
+    &__inner {
+        margin-top: 36px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        &-box {
+            width: 25%;
+
+            &-img {
+                width: fit-content;
+            }
+
+            @media(max-width:768px) {
+                width: 45%;
+            }
+        }
+
+        .box-correct {
+            margin-right: auto;
+
+            @media(max-width:768px) {
+                margin-right: unset;
+            }
+        }
+    }
+}
