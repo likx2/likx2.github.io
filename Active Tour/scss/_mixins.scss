@@ -1,0 +1,45 @@
+@mixin title-style {
+    position: relative;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 59px;
+    color: #1D8FE1;
+
+    &::after {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        left: 0;
+        bottom: -10px;
+        width: 70px;
+        height: 10px;
+        background-color: $green;
+
+    }
+
+    @media(max-width:768px) {
+        font-size: 20px;
+        line-height: 30px;
+
+        &::after {
+            height: 5px;
+
+        }
+    }
+}
+
+@mixin btn-style {
+    width: fit-content;
+    font-size: 25px;
+    line-height: 37px;
+    background: linear-gradient(90.02deg, #1D8FE1 0.03%, #00C2FF 99.98%);
+    box-shadow: 0px 5px 20px #01C0FE;
+    border-radius: 0px 37px;
+    color: #FFFFFF;
+    transition: box-shadow 0.3s ease-in-out;
+
+    &:hover,
+    &:active {
+        box-shadow: unset;
+    }
+}
