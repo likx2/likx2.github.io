@@ -1,0 +1,470 @@
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+        margin: 0 auto;
+    }
+
+    .tour-card {
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            text-align: unset;
+        }
+
+        &__level-btn {
+            margin-top: 0;
+        }
+    }
+
+    .booking-popup {
+        &__header {
+            padding: 31px 33px 50px 33px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+
+        }
+
+        &__back {
+            position: unset;
+            padding-left: 0;
+            left: unset;
+            bottom: unset;
+
+        }
+
+        &__title {
+            font-size: 24px;
+            line-height: 33px;
+            padding: 17px 60px;
+        }
+    }
+
+    .more-info-popup {
+        &__title {
+            padding: 0 70px;
+        }
+
+        &__subtext {
+            padding: 0 70px 50px 70px;
+            margin-top: 19px;
+        }
+
+        &__text {
+            padding: 50px 60px;
+        }
+
+        &__price {
+            padding: 0 60px;
+
+        }
+
+        &__btn-list {
+            padding: 0 60px;
+
+        }
+    }
+
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .header {
+        padding: 30px 0 45px 0;
+
+        &__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__logo {
+            text-align: left;
+            width: 50%;
+        }
+
+        &__btn-list {
+            margin: 0;
+            width: 50%;
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+
+        &__link {
+            margin: 10px 10px;
+
+        }
+
+    }
+
+    .intro {
+        &__inner {
+            flex-direction: row;
+        }
+
+        &__title {
+            text-align: unset;
+        }
+
+        &__subtitle {
+            text-align: unset;
+            margin: 15px 0 46px 0;
+        }
+
+        &__menu {
+            width: 30%;
+            text-align: unset;
+            padding: 0;
+            margin: 0;
+
+            &-link {
+                padding: 14px 50px;
+                border-radius: 9px 0 0 9px;
+                transition: all 0.1s ease-in;
+
+                &:hover {
+                    color: white;
+                    background-color: #6D3DF8;
+                }
+            }
+        }
+
+        &__main {
+            width: 70%;
+        }
+
+        &__guide {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 166px;
+        }
+
+        &__step {
+            font-weight: bold;
+
+            &-num {
+                font-size: 48px;
+                line-height: 65px;
+            }
+
+            &-desc {
+                font-size: 18px;
+                line-height: 25px;
+            }
+        }
+    }
+
+    .service_detail-menu {
+        display: block;
+    }
+
+
+
+    .gallery {
+        padding-top: 100px;
+
+        &__img {
+            padding: 0;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            max-width: 256px;
+
+        }
+    }
+
+    .choose-option {
+        &__title {
+            padding: 0;
+            margin-bottom: 100px;
+        }
+
+        &__gift {
+            display: none;
+        }
+
+    }
+
+    .service-card {
+        display: flex;
+        flex-direction: row-reverse;
+        margin-bottom: 50px;
+        padding: 0;
+
+
+        &__text {
+            width: 50%;
+            padding: 0;
+        }
+
+        &__title {
+            margin: 0;
+            max-width: 70%;
+            text-align: unset;
+        }
+
+        &__features-list {
+            margin-top: 28px;
+        }
+
+        &__img {
+            height: auto;
+            // margin-bottom: auto;
+            object-fit: cover;
+            object-position: center;
+            width: 50%;
+        }
+    }
+
+    .gift {
+        &__title {
+            margin-bottom: 65px;
+        }
+
+        &__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__item {
+            margin: 0;
+
+            width: 30%;
+
+            &-guide {
+                max-width: unset;
+            }
+        }
+    }
+
+    .seo {
+        &__inner {
+            display: flex;
+            justify-content: space-between;
+
+            &-text {
+                width: 47%;
+            }
+
+        }
+
+        &__img {
+            width: 47%;
+            max-width: 563px;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    .footer {
+        text-align: unset;
+
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__logo {
+            text-align: left;
+            width: 50%;
+        }
+
+        &__btn-list {
+            margin: 0;
+            width: 50%;
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+
+        &__link {
+            margin: 10px 10px;
+        }
+
+        &__city {
+            display: block;
+        }
+
+        &__menu {
+            margin-top: 27px;
+            width: 40%;
+            display: flex;
+            flex-wrap: wrap;
+
+            &-link {
+                margin-right: 30px;
+            }
+
+        }
+
+        &__rights {
+            display: inline-block;
+            margin: 0;
+            margin-right: 30px;
+
+        }
+
+        &__address {
+            margin: 0;
+            display: inline-block;
+        }
+    }
+
+    .tour-card {
+        &__level-list {
+            display: flex;
+            width: 90%;
+            margin: 0 auto;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+
+        &__level-btn {
+            margin: 0;
+        }
+    }
+
+    .more-info-popup {
+        &__props {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__left {
+            width: 45%;
+
+        }
+
+        &__right {
+            width: 45%;
+
+        }
+    }
+
+    .booking-popup {
+        &__page {
+            width: 60%;
+            margin: 72px auto 0 auto;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        &__page_mobile {
+            display: none;
+        }
+
+        &__card {
+            padding: 0 25px;
+        }
+
+        &__img {
+            display: block;
+            max-width: 472px;
+            margin: 0 auto;
+        }
+
+        &__tour-amount {
+            display: none;
+        }
+
+        &__price {
+            display: block;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    .header {
+        &__logo {
+            width: 30%;
+        }
+
+        &__btn-list {
+            margin: 0;
+            width: 70%;
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+
+        &__link {
+            margin: 0 10px;
+
+        }
+
+    }
+
+    .footer {
+        &__logo {
+            text-align: left;
+            width: 30%;
+        }
+
+        &__btn-list {
+            margin: 0;
+            width: 70%;
+        }
+
+        &__link {
+            margin: 0 10px;
+
+        }
+    }
+
+    .choose-tour {
+        &__inner {
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+        }
+    }
+
+    .tour-card {
+        width: 49%;
+        min-width: unset;
+        margin: 0 0 29px 0;
+
+        &__level-list {
+            width: 70%;
+        }
+
+        &__features {
+            margin-top: 0;
+        }
+
+
+    }
+
+
+
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+        margin: 0 auto;
+    }
+
+    .gallery {
+        &__img {
+            margin-right: 25px;
+            margin-bottom: 25px;
+        }
+    }
+
+    .choose-tour {
+        &__level-list {
+            width: 60%;
+        }
+    }
+}
