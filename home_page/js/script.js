@@ -49,26 +49,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         ]
     });
-    // Option Card
+    // Option Card Swiper
     const chooseTourSliderTrack = document.querySelector('.choose-tour__inner');
     const tourCards = document.querySelectorAll('.tour-card');
-    // let chooseTourSliderCounter = 0,
-    //     chooseTourStartX, chooseTourEndX;
 
-    // chooseTourSliderTrack.addEventListener('touchstart', (event) => {
-    //     chooseTourStartX = event.touches[0].clientX;
-    // });
-    // chooseTourSliderTrack.addEventListener('touchmove', (event) => {
-    //     chooseTourEndX = event.touches[0].clientX;
-    // })
-    // chooseTourSliderTrack.addEventListener('touchend', (event) => {
-    //     let chooseTourDiffer = chooseTourEndX - chooseTourStartX;
-    //     if (chooseTourDiffer > 50) chooseTourSliderCounter--;
-    //     else if (chooseTourDiffer < -50) chooseTourSliderCounter++;
-    //     if (chooseTourSliderCounter > tourCards.length - 1 || chooseTourSliderCounter < 0) return;
-    //     chooseTourSliderTrack.style.transform = `translateX(${-chooseTourSliderCounter*100}%)`;
-    // });
-    swiper(chooseTourSliderTrack, tourCards.length);
+    $('.choose-tour__inner').slick({
+        responsive: [{
+                breakpoint: 3000,
+                settings: 'unslick'
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    infinite: false,
+                    arrows: false,
+                }
+            }
+
+
+        ]
+    });
+    // swiper(chooseTourSliderTrack, tourCards.length);
     // More Info Popup
     const tourCardBtns = document.querySelectorAll('.tour-card__btn');
     const moreInfoPopups = document.querySelectorAll('.more-info-popup');
@@ -136,47 +137,45 @@ document.addEventListener('DOMContentLoaded', () => {
             currentSlides[index].style.transform = `translateX(${bookingSliderCounter*width}%)`;
         });
     });
-    // Booking Popup Slider
-    // let bookingSliderStartX,
-    //     bookingSliderEndX;
+    // Booking Popup Swiper
+    $('.booking-popup__slider-track').slick({
+        responsive: [{
+                breakpoint: 3000,
+                settings: 'unslick'
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    infinite: false,
+                    arrows: false,
+                }
+            }
+
+
+        ]
+    });
     // bookingSliderTracks.forEach((item, index) => {
-    //     item.addEventListener('touchstart', (event) => {
-    //         bookingSliderStartX = event.touches[0].clientX;
-    //     });
-    //     item.addEventListener('touchmove', (event) => {
-    //         bookingSliderEndX = event.touches[0].clientX;
+    //     swiper(item, bookingCards.length / bookingPopups.length);
+    // })
 
-    //     });
-    //     item.addEventListener('touchend', (event) => {
-    //         let bokkingSliderDiffer = bookingSliderEndX - bookingSliderStartX;
-    //         if (bokkingSliderDiffer > 50) bookingSliderCounter--;
-    //         else if (bokkingSliderDiffer < -50) bookingSliderCounter++;
-    //         if (bookingSliderCounter > bookingCards.length - 1 || bookingSliderCounter < 0) return;
-    //         bookingSliderTracks[index].style.transform = `translateX(${-bookingSliderCounter*100}%)`;
-    //     });
-    // });
-    bookingSliderTracks.forEach((item, index) => {
-        swiper(item, bookingCards.length / bookingPopups.length);
-    })
+    // function swiper(track, itemsLength) {
+    //     let counter = 0,
+    //         startX, endX;
 
-    function swiper(track, itemsLength) {
-        let counter = 0,
-            startX, endX;
-
-        track.addEventListener('touchstart', (event) => {
-            console.log(event);
-            startX = event.targetTouches[0].clientX;
-        });
-        track.addEventListener('touchmove', (event) => {
-            endX = event.targetTouches[0].clientX;
-        })
-        track.addEventListener('touchend', (event) => {
-            let differ = endX - startX;
-            console.log(differ);
-            if (differ > 50) counter--;
-            else if (differ < -50) counter++;
-            if (counter > itemsLength - 1 || counter < 0) return;
-            track.style.transform = `translateX(${-counter*100}%)`;
-        });
-    }
+    //     track.addEventListener('touchstart', (event) => {
+    //         console.log(event);
+    //         startX = event.targetTouches[0].clientX;
+    //     });
+    //     track.addEventListener('touchmove', (event) => {
+    //         endX = event.targetTouches[0].clientX;
+    //     })
+    //     track.addEventListener('touchend', (event) => {
+    //         let differ = endX - startX;
+    //         console.log(differ);
+    //         if (differ > 50) counter--;
+    //         else if (differ < -50) counter++;
+    //         if (counter > itemsLength - 1 || counter < 0) return;
+    //         track.style.transform = `translateX(${-counter*100}%)`;
+    //     });
+    // }
 });

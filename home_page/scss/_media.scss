@@ -358,7 +358,13 @@
             display: none;
         }
 
+        &__slider-track {
+            display: flex;
+            transition: transform 0.3s;
+        }
+
         &__card {
+            min-width: 100%;
             padding: 0 25px;
         }
 

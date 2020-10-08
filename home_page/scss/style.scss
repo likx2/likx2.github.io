@@ -392,7 +392,7 @@
 }
 
 .tour-card {
-    min-width: 100%;
+    // min-width: 100%;
     padding: 50px;
     border: 1px solid #E3E3E3;
     border-radius: 10px;
@@ -630,11 +630,6 @@
     &__slider {
         margin-top: 50px;
         overflow: hidden;
-
-        &-track {
-            display: flex;
-            transition: transform 0.3s;
-        }
     }
 
     &__status {
@@ -658,7 +653,7 @@
     }
 
     &__card {
-        min-width: 100%;
+        // min-width: 100%;
 
         &-title {
             font-weight: bold;
