@@ -164,6 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
             startX, endX;
 
         track.addEventListener('touchstart', (event) => {
+            console.log(event);
             startX = event.targetTouches[0].clientX;
         });
         track.addEventListener('touchmove', (event) => {
