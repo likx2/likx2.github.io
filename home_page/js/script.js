@@ -164,10 +164,10 @@ document.addEventListener('DOMContentLoaded', () => {
             startX, endX;
 
         track.addEventListener('touchstart', (event) => {
-            startX = event.tragetTouches[0].clientX;
+            startX = event.targetTouches[0].clientX;
         });
         track.addEventListener('touchmove', (event) => {
-            endX = event.tragetTouches[0].clientX;
+            endX = event.targetTouches[0].clientX;
         })
         track.addEventListener('touchend', (event) => {
             let differ = endX - startX;
