@@ -164,16 +164,16 @@ document.addEventListener('DOMContentLoaded', () => {
             startX, endX;
 
         track.addEventListener('touchstart', (event) => {
-            startX = event.touches[0].clientX;
+            startX = event.tragetTouches[0].clientX;
         });
         track.addEventListener('touchmove', (event) => {
-            endX = event.touches[0].clientX;
+            endX = event.tragetTouches[0].clientX;
         })
         track.addEventListener('touchend', (event) => {
             let differ = endX - startX;
             console.log(differ);
-            if (differ > 0) counter--;
-            else if (differ < 0) counter++;
+            if (differ > 50) counter--;
+            else if (differ < -50) counter++;
             if (counter > itemsLength - 1 || counter < 0) return;
             track.style.transform = `translateX(${-counter*100}%)`;
         });
