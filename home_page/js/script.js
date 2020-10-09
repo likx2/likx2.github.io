@@ -31,6 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Service Card Slider
+    // $(document).ready(function () {
+
+    // });
     $('.choose-option__inner').slick({
         responsive: [{
                 breakpoint: 3000,
@@ -69,113 +72,140 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ]
     });
-    // swiper(chooseTourSliderTrack, tourCards.length);
-    // More Info Popup
-    const tourCardBtns = document.querySelectorAll('.tour-card__btn');
-    const moreInfoPopups = document.querySelectorAll('.more-info-popup');
-
-    tourCardBtns.forEach((item, i) => {
-        item.addEventListener('click', (event) => {
-            $(moreInfoPopups[i]).fadeIn();
-        });
-    });
-
-    moreInfoPopups.forEach(item => {
-        item.style.display = 'none';
-        item.addEventListener('click', (event) => {
-            if (event.target.classList.contains('more-info-popup__close-btn') || event.target === event.currentTarget) {
-                $(moreInfoPopups).fadeOut();
-            }
-        });
-    });
 
     // Booking Popup
-    const moreInfoViewBtns = document.querySelectorAll('.more-info-popup__view-btn');
-    const bookingPopups = document.querySelectorAll('.booking-popup');
+    const moreInfoViewBtns = $('.more-info-popup__view-btn'),
+        bookingPopups = $('.booking-popup');
 
-
-    moreInfoViewBtns.forEach((item, index) => {
-        item.addEventListener('click', (event) => {
-            moreInfoPopups[index].style.display = 'none';
+    moreInfoViewBtns.each((index, item) => {
+        $(item).on('click', () => {
             $(bookingPopups[index]).fadeIn();
+            $(bookingPopups[index]).find('.booking-popup__slider-track').slick({
+                responsive: [{
+                        breakpoint: 3000,
+                        settings: 'unslick'
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            infinite: false,
+                            arrows: false,
+                            dots: true,
+                            dotsClass: 'booking-popup__page_mobile'
+                        }
+                    }
+                ]
+            });
         });
     });
+
+
+
+    // Amount
     let bookingSliderCounter = 0;
-    bookingPopups.forEach(item => {
-        item.style.display = 'none';
-        item.addEventListener('click', (event) => {
-            if (event.target.classList.contains('booking-popup__close-btn') || event.target === event.currentTarget) {
-                bookingSliderCounter = 0;
-                $(item).fadeOut();
+    const amount = $('.amount'),
+        amountNums = $('.amount__number');
+
+    let amountCounter = new Array(amount.length);
+
+    amount.each((index, item) => {
+        amountCounter[index] = 0;
+        amountNums.text(amountCounter[index]);
+        $(item).on('click', (event) => {
+            if ($(event.target).hasClass('amount-btn_minus')) {
+                if (amountCounter[index] <= 0) {
+                    amountCounter[index] = 0;
+                    return;
+                }
+                amountCounter[index]--;
+                $(amountNums[index]).text(amountCounter[index]);
+
+            } else if ($(event.target).hasClass('amount-btn_plus')) {
+                if (amountCounter[index] >= 5) return;
+                amountCounter[index]++;
+                $(amountNums[index]).text(amountCounter[index]);
+
             }
         });
     });
-    // Bokking Popup Slider
-    const bookingSliderTracks = document.querySelectorAll('.booking-popup__slider-track'),
-        bookingPrevBtns = document.querySelectorAll('.booking-popup__prev-btn'),
-        bookingNextBtns = document.querySelectorAll('.booking-popup__next-btn'),
-        bookingCards = document.querySelectorAll('.booking-popup__card'),
-        currentSlides = document.querySelectorAll('.booking-popup__current-item');
-    currentSlides.forEach(item => {
-        item.style.width = `${100*bookingPopups.length/bookingCards.length}%`;
-    })
-    let width = 100;
+    // More Info Popup
+    const tourCardBtns = $('.tour-card__btn'),
+        moreInfoPopups = $('.more-info-popup');
 
-    bookingNextBtns.forEach((item, index) => {
-        item.addEventListener('click', () => {
+    tourCardBtns.each((index, item) => {
+        $(item).on('click', () => {
+            $(moreInfoPopups[index]).fadeIn();
+        });
+    });
+    moreInfoPopups.each((index, item) => {
+        $(item).on('click', (event) => {
+            if ($(event.target).hasClass("more-info-popup__close-btn") || event.target === event.currentTarget) {
+                $(moreInfoPopups[index]).fadeOut();
+                reset(index);
+            }
+        });
+    });
+    // Closing Popups
+    bookingPopups.each((index, item) => {
+        $(item).on('click', (event) => {
+            if ($(event.target).hasClass('booking-popup__back')) {
+                $(bookingPopups[index]).fadeOut();
+                reset(index);
+
+
+            } else if ($(event.target).hasClass("booking-popup__close-btn") || event.target === event.currentTarget) {
+                $(bookingPopups[index]).fadeOut();
+                $(moreInfoPopups[index]).hide();
+                reset(index);
+
+
+            }
+        });
+    });
+
+    // // Bokking Popup Slider
+    const currentSlides = $('.booking-popup__current-item'),
+        bookingSliderTracks = $('.booking-popup__slider-track'),
+        bookingCards = $('.booking-popup__card'),
+        bookingPrevBtns = $('.booking-popup__prev-btn'),
+        bookingNextBtns = $('.booking-popup__next-btn');
+    currentSlides.each((index, item) => {
+        $(item).width(`${100*bookingPopups.length/bookingCards.length}%`);
+    });
+    let width = 100;
+    bookingNextBtns.each((index, item) => {
+        $(item).on('click', () => {
             if (bookingSliderCounter >= bookingCards.length / bookingPopups.length - 1) return;
             bookingSliderCounter++;
-            bookingSliderTracks[index].style.transform = `translateX(${-bookingSliderCounter*width}%)`;
-            currentSlides[index].style.transform = `translateX(${bookingSliderCounter*width}%)`;
-        });
+            moveSlide(bookingSliderCounter, index);
+        })
+
+
     });
-    bookingPrevBtns.forEach((item, index) => {
-        item.addEventListener('click', () => {
+    bookingPrevBtns.each((index, item) => {
+        $(item).on('click', () => {
             if (bookingSliderCounter <= 0) return;
             bookingSliderCounter--;
-            bookingSliderTracks[index].style.transform = `translateX(${-bookingSliderCounter*width}%)`;
-            currentSlides[index].style.transform = `translateX(${bookingSliderCounter*width}%)`;
-        });
+            moveSlide(bookingSliderCounter, index);
+        })
+
+
     });
-    // Booking Popup Swiper
-    $('.booking-popup__slider-track').slick({
-        responsive: [{
-                breakpoint: 3000,
-                settings: 'unslick'
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    infinite: false,
-                    arrows: false,
-                }
-            }
+
+    function moveSlide(counter, i) {
+        $(bookingSliderTracks[i]).css('transform', `translateX(${-counter*width}%)`);
+        $(currentSlides[i]).css('transform', `translateX(${counter*width}%)`);
+    }
+
+    function reset(i) {
+        bookingSliderCounter = 0;
+        moveSlide(bookingSliderCounter, i);
+        amountCounter = amountCounter.map(item => 0);
+        amountNums.text('0');
+    }
 
 
-        ]
-    });
-    // bookingSliderTracks.forEach((item, index) => {
-    //     swiper(item, bookingCards.length / bookingPopups.length);
-    // })
 
-    // function swiper(track, itemsLength) {
-    //     let counter = 0,
-    //         startX, endX;
 
-    //     track.addEventListener('touchstart', (event) => {
-    //         console.log(event);
-    //         startX = event.targetTouches[0].clientX;
-    //     });
-    //     track.addEventListener('touchmove', (event) => {
-    //         endX = event.targetTouches[0].clientX;
-    //     })
-    //     track.addEventListener('touchend', (event) => {
-    //         let differ = endX - startX;
-    //         console.log(differ);
-    //         if (differ > 50) counter--;
-    //         else if (differ < -50) counter++;
-    //         if (counter > itemsLength - 1 || counter < 0) return;
-    //         track.style.transform = `translateX(${-counter*100}%)`;
-    //     });
-    // }
+
 });

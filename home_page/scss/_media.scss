@@ -18,7 +18,6 @@
 
     .booking-popup {
         &__header {
-            padding: 31px 33px 50px 33px;
             border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 
         }
@@ -346,6 +345,11 @@
     }
 
     .booking-popup {
+        &__header {
+            padding: 31px 33px 50px 56px;
+
+        }
+
         &__page {
             width: 60%;
             margin: 72px auto 0 auto;
@@ -358,6 +362,11 @@
             display: none;
         }
 
+        &__slider {
+            overflow-x: hidden;
+
+        }
+
         &__slider-track {
             display: flex;
             transition: transform 0.3s;
@@ -365,7 +374,6 @@
 
         &__card {
             min-width: 100%;
-            padding: 0 25px;
         }
 
         &__img {
@@ -381,7 +389,37 @@
         &__price {
             display: block;
         }
+
+        &__extra {
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+
+            &-text {
+                text-align: left;
+                width: 40%;
+            }
+        }
+
+        &__keytext {
+            display: none;
+        }
+
+        &__status,
+        &__text,
+        &__bottom {
+            padding: 0 70px;
+        }
+
+        &__text {
+            margin-top: 50px;
+        }
+
+        &__subtext {
+            padding: 0 70px 50px 70px;
+        }
     }
+
 }
 
 @media (min-width: 992px) {
