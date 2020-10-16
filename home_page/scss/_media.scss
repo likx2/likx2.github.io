@@ -62,6 +62,25 @@
         }
     }
 
+    .gift-popup {
+        &__header {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+
+        }
+
+        &__back {
+            position: unset;
+            padding-left: 0;
+            left: unset;
+            bottom: unset;
+
+        }
+
+        &__title {
+            padding: 17px 105px;
+        }
+    }
+
 }
 
 @media (min-width: 768px) {
@@ -344,9 +363,14 @@
         }
     }
 
-    .booking-popup {
+    .booking-popup,
+    .gift-popup {
+        &__content {
+            padding: 50px 0;
+        }
+
         &__header {
-            padding: 31px 33px 50px 56px;
+            padding: 0px 33px 50px 56px;
 
         }
 
@@ -372,22 +396,8 @@
             transition: transform 0.3s;
         }
 
-        &__card {
-            min-width: 100%;
-        }
-
-        &__img {
-            display: block;
-            max-width: 472px;
-            margin: 0 auto;
-        }
-
-        &__tour-amount {
-            display: none;
-        }
-
-        &__price {
-            display: block;
+        &__bottom {
+            padding: 0 70px;
         }
 
         &__extra {
@@ -405,9 +415,29 @@
             display: none;
         }
 
+
+    }
+
+    .popup-card {
+        min-width: 100%;
+
+
+        &__img {
+            display: block;
+            max-width: 472px;
+            margin: 0 auto;
+        }
+
+        &__tour-amount {
+            display: none;
+        }
+
+        &__price {
+            display: block;
+        }
+
         &__status,
-        &__text,
-        &__bottom {
+        &__text {
             padding: 0 70px;
         }
 
@@ -419,6 +449,40 @@
             padding: 0 70px 50px 70px;
         }
     }
+
+    .booking-data {
+        &__content {
+            padding: 50px 0 80px 0;
+        }
+
+        &__form {
+            padding: 0 60px;
+        }
+
+        &__prepayment {
+            margin-top: 9px;
+        }
+    }
+
+    .gift-data {
+        &__form {
+            padding: 0;
+        }
+
+        &__top {
+            padding: 0 60px 50px 60px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+        }
+
+        &__bottom {
+            padding: 0 60px 50px 60px;
+        }
+
+        &__postcard {
+            padding: 0 60px;
+        }
+    }
+
 
 }
 
@@ -487,6 +551,16 @@
         }
 
 
+    }
+
+    .gift-data {
+
+        &__subtitle,
+        &__prepayment {
+            br {
+                display: none;
+            }
+        }
     }
 
 

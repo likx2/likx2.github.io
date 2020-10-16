@@ -1,0 +1,14 @@
+@mixin title-style {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 45px;
+    text-align: center;
+    color: $black;
+}
+
+@mixin content-text-style($color: #404040) {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: $color;
+}

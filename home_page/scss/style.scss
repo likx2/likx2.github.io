@@ -477,15 +477,9 @@
 }
 
 .more-info-popup {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    @include popup-props;
     background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
 
     &__content {
         position: relative;
@@ -584,15 +578,357 @@
 }
 
 .booking-popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    @include popup-props;
+    background-color: transparent;
+
+    &__content {
+        background-color: #fff;
+        height: 90vh;
+        width: 100%;
+        max-width: 666px;
+        padding: 31px 0 55px 0;
+        overflow: auto;
+    }
+
+    &__header {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 27px 50px 31px;
+    }
+
+    &__back {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding-left: 31px;
+        font-size: 18px;
+        line-height: 25px;
+        cursor: pointer;
+
+    }
+
+    &__title {
+        @include content-text-style;
+        border-radius: 9px;
+        padding: 21px 26px;
+        border: 1px solid #6D3DF8;
+        color: #6D3DF8;
+
+    }
+
+    &__slider {
+        margin-top: 50px;
+    }
+
+
+    &__bottom {
+        padding: 0 20px;
+    }
+
+    &__prev-btn,
+    &__next-btn {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 25px;
+        color: #6D3DF8;
+        cursor: pointer;
+
+    }
+
+    &__page {
+        display: none;
+        align-items: center;
+
+        &-bar {
+            width: 100%;
+            height: 1px;
+            background-color: #6D3DF8;
+            margin: 0 30px;
+        }
+    }
+
+    &__current-item {
+        width: 0;
+        height: 4px;
+        background-color: #6D3DF8;
+        margin-top: -3px;
+        transition: transform 0.3s;
+    }
+
+    &__page_mobile {
+        display: flex;
+        padding: 0 20px;
+        margin-top: 30px;
+        justify-content: center;
+        list-style: none;
+
+        li {
+            margin: 0 3px;
+            border-radius: 100%;
+            width: 17px;
+            height: 17px;
+            background-color: #C4C4C4;
+            opacity: 0.3;
+
+
+            button {
+                font-size: 0;
+                border: none;
+            }
+        }
+
+        .slick-active {
+            background-color: #6D3DF8;
+            opacity: unset;
+        }
+
+
+    }
+
+    &__keytext {
+        @include content-text-style;
+        text-align: center;
+        opacity: 0.7;
+
+        margin-top: 30px;
+    }
+
+    &__extra {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        text-align: center;
+        width: 80%;
+        margin: 50px auto 0 auto;
+
+
+        &-text {
+            @include content-text-style;
+        }
+
+        &-price {
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 33px;
+            margin: 30px 0;
+        }
+    }
+
+    &__prepayment {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 33px;
+        margin-top: 50px;
+
+    }
+
+    &__pay-in-place {
+        font-size: 24px;
+        line-height: 33px;
+        margin-top: 30px;
+
+    }
+
+    &__btn {
+        margin-top: 50px;
+
+    }
+
+    &__close-btn {
+        cursor: pointer;
+    }
+
+}
+
+.popup-card {
+    &-title {
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
+    }
+
+    &__status {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 33px;
+        padding: 0 20px;
+
+    }
+
+    &__subtext {
+        font-size: 16px;
+        line-height: 22px;
+        margin-top: 10px;
+        padding: 0 20px 50px 20px;
+
+    }
+
+    &__img {
+        width: 100%;
+
+    }
+
+
+
+
+
+    &__text {
+        padding: 0 20px;
+        margin-top: 30px;
+    }
+
+    &__features-list {
+        padding: 38px 0;
+
+
+    }
+
+    &__features-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__features-desc {
+        @include content-text-style;
+        margin-left: 12px;
+    }
+
+    &__payment {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    &__tour-amount {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 33px;
+    }
+
+    &__price {
+        display: none;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 33px;
+    }
+}
+
+.amount {
+    width: fit-content;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #6D3DF8;
+    height: fit-content;
+    border-radius: 9px;
+    overflow: hidden;
+
+
+
+    &-btn {
+        width: 60px;
+        color: white;
+        padding: 16px 26px;
+        background-color: #6D3DF8;
+        border-radius: 9px;
+        cursor: pointer;
+    }
+
+    &__number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        font-size: 18px;
+        line-height: 25px;
+        border: none;
+        color: #6D3DF8;
+
+    }
+}
+
+.booking-data {
+    @include popup-props;
+    background-color: transparent;
+
+    &__content {
+        width: 100%;
+        max-width: 666px;
+        padding: 30px 0 86px 0;
+        height: 90vh;
+        overflow: auto;
+        background-color: #fff;
+    }
+
+    &__form {
+        padding: 0 20px;
+    }
+
+    &__subtitle {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 33px;
+        margin-top: 50px;
+    }
+
+    &__date-btn,
+    &__name,
+    &__phone {
+        @include content-text-style;
+        border: 1px solid #6D3DF8;
+        border-radius: 9px;
+        padding: 16px 30px;
+        margin-top: 20px;
+        color: #6D3DF8;
+        max-width: 260px;
+
+        &:active,
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__date-btn {
+        cursor: pointer;
+        width: fit-content;
+    }
+
+
+
+    &__name,
+    &__phone {
+        text-align: center;
+    }
+
+    &__prepayment {
+        font-size: 24px;
+        line-height: 33px;
+        margin-top: 20px;
+    }
+
+    &__btn {
+        margin-top: 50px;
+    }
+
+}
+
+.gift-popup {
+    @include popup-props;
+    background-color: transparent;
 
     &__content {
         background-color: #fff;
@@ -833,6 +1169,8 @@
 
     &__btn {
         margin-top: 50px;
+        background: linear-gradient(180deg, #14A33C 0%, #1C8F3C 100%);
+        box-shadow: 3px 3px 9px #1C8F3C;
 
     }
 
@@ -842,33 +1180,89 @@
 
 }
 
-.amount {
-    width: fit-content;
-    display: flex;
-    border: 1px solid #6D3DF8;
-    height: fit-content;
-    border-radius: 9px;
-    overflow: hidden;
+.gift-data {
+    @include popup-props;
+    background-color: transparent;
 
+    &__content {
+        width: 100%;
+        max-width: 666px;
+        padding: 30px 0 86px 0;
+        height: 90vh;
+        overflow: auto;
+        background-color: #fff;
+    }
 
-
-    &-btn {
-        width: 60px;
-        color: white;
-        padding: 16px 26px;
-        background-color: #6D3DF8;
-        border-radius: 9px;
+    &__postcard {
+        @include content-text-style;
+        font-weight: bold;
+        color: #6D3DF8;
+        width: fit-content;
+        text-decoration: underline dashed #6D3DF8;
+        margin-top: 50px;
+        padding: 0 20px;
         cursor: pointer;
     }
 
-    &__number {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 60px;
-        border: none;
+    &__form {
+        padding: 0 20px;
+    }
+
+    &__subtitle {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 33px;
+        margin-top: 50px;
+    }
+
+    &__date-btn,
+    &__name,
+    &__phone,
+    &__congrats {
+        @include content-text-style;
+        border: 1px solid #6D3DF8;
+        border-radius: 9px;
+        padding: 16px 30px;
+        margin-top: 20px;
+        color: #6D3DF8;
+        max-width: 260px;
+
+        &:active,
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            @include content-text-style;
+            color: #6D3DF8;
+        }
+
 
     }
+
+
+    &__name,
+    &__phone {
+        text-align: center;
+    }
+
+    &__congrats {
+        max-height: 122px;
+
+    }
+
+    &__prepayment {
+        font-size: 24px;
+        line-height: 33px;
+        margin-top: 20px;
+    }
+
+    &__btn {
+        margin-top: 50px;
+        background: linear-gradient(180deg, #14A33C 0%, #1C8F3C 100%);
+        box-shadow: 3px 3px 9px #1C8F3C;
+    }
+
 }
 
 
