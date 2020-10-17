@@ -22,10 +22,10 @@
                         <img class="header__logo-icon" src="img/hero-page/logo.svg" alt="Logo"></img>
                     </div>
                     <ul class="header__nav">
-                        <li>التطبيق المستخدم</li>
-                        <li>سائق التطبيق</li>
-                        <li>فيديو</li>
-                        <li>الاتصال</li>
+                        <li class="header__nav-item" data-scroll=".user-app">التطبيق المستخدم</li>
+                        <li class="header__nav-item" data-scroll=".driver-app">سائق التطبيق</li>
+                        <li class="header__nav-item" data-scroll=".user-watch">فيديو</li>
+                        <li class="header__nav-item" data-scroll=".footer">الاتصال</li>
                     </ul>
                     <div class="header__lang">
                         <a class="header__link" href="index.html">EN</a>
@@ -49,8 +49,9 @@
                             التطبيق يربط سائقي الشاحنات وأصحاب مع العملاء. كل هذا في تطبيق واحد بسيط
                         </p>
                         <div class="main__btn-list main__btn-list_ar">
-                            <div class="main__btn main__btn_purple">أنا المستخدم</div>
-                            <div class="main__btn main__btn_green main__btn_green_ar">أنا السائق</div>
+                            <div class="main__btn main__btn_purple" data-scroll=".user-work">أنا المستخدم</div>
+                            <div class="main__btn main__btn_green main__btn_green_ar" data-scroll=".driver-work">أنا
+                                السائق</div>
                         </div>
                     </div>
                     <div class="main__center main__center_ar">
@@ -71,7 +72,7 @@
         </div>
     </section>
 
-    <section class="watch">
+    <section class="watch user-watch">
         <div class="container">
             <h2 class="watch__title">مشاهدة الفيديو</h2>
             <video class="watch__video" controls>
