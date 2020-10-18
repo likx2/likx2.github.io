@@ -579,7 +579,6 @@
 
 .booking-popup {
     @include popup-props;
-    background-color: transparent;
 
     &__content {
         background-color: #fff;
@@ -863,7 +862,6 @@
 
 .booking-data {
     @include popup-props;
-    background-color: transparent;
 
     &__content {
         width: 100%;
@@ -928,7 +926,6 @@
 
 .gift-popup {
     @include popup-props;
-    background-color: transparent;
 
     &__content {
         background-color: #fff;
@@ -1182,7 +1179,6 @@
 
 .gift-data {
     @include popup-props;
-    background-color: transparent;
 
     &__content {
         width: 100%;
@@ -1264,6 +1260,210 @@
     }
 
 }
+
+.booking-thanks {
+    @include popup-props;
+
+    &__content {
+        background-color: #fff;
+        height: 90vh;
+        width: 100%;
+        max-width: 666px;
+        padding: 31px 0 55px 0;
+        overflow: auto;
+    }
+
+    &__text {
+        padding: 0 20px;
+        margin: 50px 0;
+    }
+
+    &__subtitle {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 33px;
+        max-width: 474px;
+    }
+
+    &__list-title {
+        margin-top: 20px;
+        @include content-text-style;
+    }
+
+    &__list {
+        padding-left: 020px;
+    }
+
+    &__item {
+        @include content-text-style;
+
+    }
+
+    &__prev-btn,
+    &__next-btn {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 25px;
+        color: #6D3DF8;
+        cursor: pointer;
+
+    }
+
+    &__page {
+        display: none;
+        align-items: center;
+
+        &-bar {
+            width: 100%;
+            height: 1px;
+            background-color: #6D3DF8;
+            margin: 0 30px;
+        }
+    }
+
+    &__current-item {
+        width: 0;
+        height: 4px;
+        background-color: #6D3DF8;
+        margin-top: -3px;
+        transition: transform 0.3s;
+    }
+
+    &__page_mobile {
+        display: flex;
+        padding: 0 20px;
+        margin-top: 30px;
+        justify-content: center;
+        list-style: none;
+
+        li {
+            margin: 0 3px;
+            border-radius: 100%;
+            width: 17px;
+            height: 17px;
+            background-color: #C4C4C4;
+            opacity: 0.3;
+
+
+            button {
+                font-size: 0;
+                border: none;
+            }
+        }
+
+        .slick-active {
+            background-color: #6D3DF8;
+            opacity: unset;
+        }
+
+
+    }
+
+    &__bottom {
+        padding: 0 20px;
+        margin-top: 60px;
+    }
+
+    &__prepayment {
+        font-size: 24px;
+        line-height: 33px;
+        margin-top: 30px;
+    }
+
+}
+
+.thanks-card {
+    &__card-title {
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
+    }
+
+    &__status {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 33px;
+        padding: 0 20px;
+
+    }
+
+    &__subtext {
+        font-size: 16px;
+        line-height: 22px;
+        margin-top: 10px;
+        padding: 0 20px 50px 20px;
+
+    }
+
+    &__img {
+        width: 100%;
+
+    }
+
+    &__text {
+        padding: 0 20px;
+        margin-top: 30px;
+    }
+
+    &__features-list {
+        padding: 38px 0;
+
+
+    }
+
+    &__features-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__features-desc {
+        @include content-text-style;
+        margin-left: 12px;
+    }
+
+    &__payment {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+    }
+
+    &__amount {
+        @include content-text-style;
+        padding: 16px 68px;
+        border: 1px solid #6D3DF8;
+        border-radius: 9px;
+        color: #6D3DF8;
+    }
+
+    &__tour-amount {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 33px;
+    }
+
+    &__price {
+        display: none;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 33px;
+    }
+}
+
+
 
 
 

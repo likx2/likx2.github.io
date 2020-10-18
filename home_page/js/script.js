@@ -232,7 +232,6 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
-
     function mySlider(popup, counter, cardsLength, popupsLength, currentSlide) {
         let sliderTrack = $(popup).find('.slider-track');
         // console.log(sliderTrack[0]);
