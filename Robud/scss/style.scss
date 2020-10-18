@@ -12,6 +12,7 @@
     width: 100%;
     padding: 24px 0;
     background-color: #fff;
+    filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.16));
     z-index: 5;
 
 
@@ -271,10 +272,22 @@ $height: 13px;
         &_purple {
             background-color: #431B93;
             margin-right: 32px;
+            transition: background-color 0.3s ease-in-out;
+
+            &:hover {
+                // background-color: #31136C;
+                background-color: darken($color: #31136C, $amount: 5%);
+
+            }
         }
 
         &_green {
             background-color: #4BAF4F;
+            transition: background-color 0.3s ease-in-out;
+
+            &:hover {
+                background-color: darken($color: #4BAF4F, $amount: 7%);
+            }
 
             @media(max-width: 576px) {
                 margin-top: 24px;
@@ -857,6 +870,16 @@ $height: 13px;
 
         &-link {
             margin: 0 10px;
+
+
+        }
+
+        &-icon {
+            transition: transform 0.3s ease-in-out;
+
+            &:hover {
+                transform: translate(10%, -10%);
+            }
         }
     }
 }
