@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const body = document.querySelector('body');
     // Gallery Slider
     $('.gallery__inner').slick({
         infinite: true,
@@ -30,25 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     });
 
-    // Service Card Slider
-    $('.choose-option__inner').slick({
-        responsive: [{
-                breakpoint: 3000,
-                settings: "unslick"
-
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    infinite: true,
-                    arrows: false,
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-
-            }
-        ]
-    });
     // Option Card Swiper
     const chooseTourSliderTrack = document.querySelector('.choose-tour__inner');
     const tourCards = document.querySelectorAll('.tour-card');
@@ -77,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     tourCardBtns.each((index, item) => {
         $(item).on('click', () => {
             $(moreInfoPopups[index]).fadeIn();
+            body.style.overflow = 'hidden';
         });
     });
     moreInfoPopups.each((index, item) => {
@@ -123,6 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mask on the phone
     $(".booking-data__phone").mask('8(00)0-0');
+    $(".gift-data__phone").mask('8(00)0-0');
 
     // Booking Data Popup
     const bookingDataPopupBtns = $('.booking-popup__btn'),
@@ -139,6 +123,12 @@ document.addEventListener('DOMContentLoaded', () => {
         closePopup(item);
     });
 
+    // Date and Time Picker
+    $('.booking-data__date-btn').flatpickr({
+        enableTime: true,
+        dateFormat: "d-m-Y H:i",
+    });
+
     // Gift Popup
     const moreInfoBuyGiftBtns = $('.more-info-popup__buy-gift-btn'),
         giftPopups = $('.gift-popup'),
@@ -149,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     giftCurrentSlides.each((index, item) => {
         $(item).width(`${100*giftPopups.length/giftCards.length}%`);
-    })
+    });
 
     moreInfoBuyGiftBtns.each((index, item) => {
         $(item).on('click', () => {
@@ -213,33 +203,80 @@ document.addEventListener('DOMContentLoaded', () => {
     giftPopupBtns.each((index, item) => {
         $(item).on('click', () => {
             $(giftData[index]).fadeIn();
-        })
-    })
+        });
+    });
 
 
     giftData.each((index, item) => {
         closePopup(item);
-    })
+    });
+
+
+    $('.gift-data__postcard').magnificPopup({
+        type: 'image'
+    });
+
 
     function closePopup(popup) {
         $(popup).on('click', (event) => {
             if (event.target && $(event.target).hasClass('close-btn')) {
                 reset();
             } else if (event.target && $(event.target).hasClass('back-btn')) {
-                console.log('done');
                 $(popup).fadeOut();
             }
         })
     }
+    // Booking Thanks
+
+    const bookingThanks = $('.booking-thanks'),
+        bookingThanksCards = $('.booking-thanks .thanks-card'),
+        bookingThanksCurrentSlides = $('.booking-thanks__current-item');
+
+    let bookingThanksSliderCounter = 0;
+
+    bookingThanksCurrentSlides.each((index, item) => {
+        $(item).width(`${100*bookingThanks.length/bookingThanksCards.length}%`);
+    })
+    bookingThanks.each((index, item) => {
+        mySlider(item, bookingThanksSliderCounter, bookingThanksCards.length, bookingThanks.length, bookingThanksCurrentSlides[index]);
+        closePopup(item);
+    });
+
+
+    // Gift Thanks
+
+    const giftThanks = $('.gift-thanks'),
+        giftThanksCards = $('.gift-thanks .thanks-card'),
+        giftThanksCurrentSlides = $('.gift-thanks__current-item');
+
+    let giftThanksSliderCounter = 0;
+
+    giftThanksCurrentSlides.each((index, item) => {
+        $(item).width(`${100*giftThanks.length/giftThanksCards.length}%`);
+    })
+
+    giftThanks.each((index, item) => {
+        mySlider(item, giftThanksSliderCounter, giftThanksCards.length, giftThanks.length, giftThanksCurrentSlides[index]);
+        closePopup(item);
+    });
+
+
+
+
+
+
+
+
+
+
+
 
     function mySlider(popup, counter, cardsLength, popupsLength, currentSlide) {
         let sliderTrack = $(popup).find('.slider-track');
-        // console.log(sliderTrack[0]);
         $(popup).on('click', (event) => {
             if (event.target && $(event.target).hasClass('next-btn')) {
                 if (counter >= cardsLength / popupsLength - 1) return;
                 counter++;
-                // console.log(counter);
                 moveSlide(sliderTrack[0], counter, currentSlide);
 
             } else if (event.target && $(event.target).hasClass('prev-btn')) {
@@ -259,6 +296,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function reset() {
         bookingSliderCounter = 0;
         giftSliderCounter = 0;
+        bookingThanksSliderCounter = 0;
+        giftThanksSliderCounter = 0;
         moveSlide($('.slider-track'), 0, $('.current-item'));
         amountCounter = amountCounter.map(item => 0);
         amountNums.text('0');
@@ -267,5 +306,8 @@ document.addEventListener('DOMContentLoaded', () => {
         bookingDataPopups.fadeOut();
         giftPopups.fadeOut();
         giftData.fadeOut();
+        bookingThanks.fadeOut();
+        giftThanks.fadeOut();
+        body.style.overflow = '';
     }
 });

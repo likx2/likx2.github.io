@@ -259,12 +259,21 @@
     }
 
     .seo {
+        margin-top: 100px;
+
         &__inner {
             display: flex;
             justify-content: space-between;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1170px;
+            margin-top: 40px;
 
             &-text {
                 width: 47%;
+                margin-top: 0;
+
             }
 
         }
@@ -483,6 +492,80 @@
         }
     }
 
+    .booking-thanks,
+    .gift-thanks {
+        &__content {
+            padding: 50px 0;
+        }
+
+        &__header {
+            padding: 0px 33px 50px 56px;
+
+        }
+
+        &__page {
+            width: 60%;
+            margin: 72px auto 0 auto;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        &__page_mobile {
+            display: none;
+        }
+
+        &__slider {
+            overflow-x: hidden;
+
+        }
+
+        &__slider-track {
+            display: flex;
+            transition: transform 0.3s;
+        }
+
+        &__bottom {
+            padding: 0 70px;
+        }
+    }
+
+    .thanks-card {
+        min-width: 100%;
+
+        &__img {
+            display: block;
+            max-width: 472px;
+            margin: 0 auto;
+        }
+
+        &__tour-amount {
+            display: none;
+        }
+
+        &__price {
+            display: block;
+        }
+
+        &__status,
+        &__text {
+            padding: 0 70px;
+        }
+
+        &__text {
+            margin-top: 50px;
+        }
+
+        &__subtext {
+            padding: 0 70px 50px 70px;
+        }
+
+        &__payment {
+            justify-content: space-between;
+        }
+    }
+
+
 
 }
 
@@ -531,6 +614,7 @@
 
     .choose-tour {
         &__inner {
+            display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
 
@@ -540,6 +624,7 @@
     .tour-card {
         width: 49%;
         min-width: unset;
+        padding: 50px;
         margin: 0 0 29px 0;
 
         &__level-list {

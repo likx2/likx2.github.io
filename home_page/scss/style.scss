@@ -68,15 +68,17 @@
     }
 
     &__menu {
+        display: flex;
+        flex-wrap: wrap;
         margin-top: 60px;
         padding: 0 15px;
-        text-align: center;
         font-size: 20px;
         line-height: 27px;
 
         &-link {
             display: block;
-            margin-bottom: 20px;
+            margin: 10px 20px 10px 0;
+            ;
             color: #000000;
 
             &:active {
@@ -255,7 +257,6 @@
 }
 
 .seo {
-    padding-top: 50px;
     padding-bottom: 60px;
 
     &__title {
@@ -282,11 +283,12 @@
 
         &-desc {
             margin-top: 30px;
+            @include content-text-style;
         }
     }
 
     &__img {
-        max-width: 100%;
+        width: 100%;
     }
 
     &__paragraph_display {
@@ -382,19 +384,13 @@
         margin: 50px 0;
     }
 
-
-
-    &__inner {
-        display: flex;
-        transition: transform 0.3s;
-    }
-
 }
 
 .tour-card {
-    padding: 50px;
+    padding: 50px 13px;
     border: 1px solid #E3E3E3;
     border-radius: 10px;
+    margin-top: 50px;
 
     &__level-btn {
         padding: 21px 51px;
@@ -402,11 +398,14 @@
         cursor: pointer;
         text-align: center;
         margin-bottom: 17px;
-        margin-top: 25px;
 
+        &:nth-child(4) {
+            margin-bottom: 0;
+        }
 
         &_transparent {
             border: 1px solid #6D3DF8;
+            color: #6D3DF8;
         }
 
         &_green {
@@ -415,10 +414,12 @@
 
         &_purple {
             background-color: #6D3DF8;
+            color: #FFFFFF;
         }
 
         &_red {
             background-color: #F83D3D;
+            color: #FFFFFF;
         }
     }
 
@@ -441,6 +442,7 @@
             align-items: center;
             @include content-text-style;
             margin-bottom: 20px;
+            padding-left: 13px;
         }
     }
 
@@ -898,6 +900,11 @@
         &:focus {
             outline: none;
         }
+
+        &::placeholder {
+            @include content-text-style;
+            color: #6D3DF8;
+        }
     }
 
     &__date-btn {
@@ -1191,6 +1198,7 @@
 
     &__postcard {
         @include content-text-style;
+        display: inline-block;
         font-weight: bold;
         color: #6D3DF8;
         width: fit-content;
@@ -1237,6 +1245,7 @@
     }
 
 
+
     &__name,
     &__phone {
         text-align: center;
@@ -1261,7 +1270,8 @@
 
 }
 
-.booking-thanks {
+.booking-thanks,
+.gift-thanks {
     @include popup-props;
 
     &__content {
@@ -1370,6 +1380,18 @@
         margin-top: 30px;
     }
 
+    &__btn {
+        margin-top: 50px;
+    }
+
+}
+
+.gift-thanks {
+    &__btn {
+        background: linear-gradient(180deg, #14A33C 0%, #1C8F3C 100%);
+        box-shadow: 3px 3px 9px #1C8F3C;
+
+    }
 }
 
 .thanks-card {
