@@ -78,7 +78,6 @@
         &-link {
             display: block;
             margin: 10px 20px 10px 0;
-            ;
             color: #000000;
 
             &:active {
@@ -1238,6 +1237,8 @@
 
         &::placeholder {
             @include content-text-style;
+            font-family: 'Open Sans',
+                sans-serif;
             color: #6D3DF8;
         }
 
