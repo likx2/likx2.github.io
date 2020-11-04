@@ -602,6 +602,11 @@ $height: 13px;
         }
     }
 
+    &_ar {
+        background: url('../img/user-app/user-app-bg_ar.jpg') no-repeat center;
+        background-size: cover;
+    }
+
     @media(max-width: 768px) {
         padding-top: 64px;
         background-position: left top;
@@ -667,6 +672,10 @@ $height: 13px;
     &__inner {
         display: flex;
         justify-content: space-between;
+
+        &__ar {
+            flex-direction: row-reverse;
+        }
 
         @media(max-width: 768px) {
             display: block;
@@ -773,6 +782,11 @@ $height: 13px;
             width: 100%;
             margin-top: 40px;
         }
+    }
+
+    &_ar {
+        background: url('../img/driver-app/driver-app-bg_ar.jpg') no-repeat center;
+        background-size: cover;
     }
 
     @media(max-width: 768px) {
