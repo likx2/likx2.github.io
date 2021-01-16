@@ -495,37 +495,6 @@ $height: 13px;
     }
 }
 
-.terms-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba($color: #000000, $alpha: 0.5);
-    z-index: 10;
-
-    &__pdf {
-        width: 528px;
-        height: 90vh;
-    }
-
-    &__close {
-        position: absolute;
-        right: 32px;
-        top: 32px;
-        width: 24px;
-        height: 24px;
-        cursor: pointer;
-    }
-
-    &_active {
-        display: flex;
-    }
-}
-
 .watch {
     padding: 84px 0;
     text-align: center;
@@ -909,8 +878,12 @@ $height: 13px;
         margin: 0 auto;
     }
 
+    &__phone {
+        margin: 64px 0 0;
+    }
+
     &__mail {
-        margin-top: 64px;
+        margin-top: 32px;
     }
 
     &__address {
@@ -961,15 +934,12 @@ $height: 13px;
     }
 
     &__terms {
+        display: inline-block;
         font-weight: 500;
         font-size: 16px;
         line-height: 140%;
         margin: 48px 0 0;
         cursor: pointer;
         color: #D7D7D7;
-
-        // @media(max-width: 768px) {
-        //     display: none;
-        // }
     }
 }

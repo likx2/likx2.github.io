@@ -81,7 +81,7 @@
     </section>
     <div class="terms-modal">
         <img class="terms-modal__close" src="img/cross.svg" alt="close">
-        <div class="terms-modal__pdf" id="pdf"></div>
+        <canvas id="pdf"></canvas>
     </div>
     <section class="watch user-watch">
         <div class="container">
@@ -239,6 +239,10 @@
                 <div class="footer__logo">
                     <img class="footer__logo-icon" src="img/footer/logo.svg" alt="Logo">
                 </div>
+                <div class="footer__phone">
+                    <div class="footer__lable">Phone</div>
+                    <div class="footer__text">920011978</div>
+                </div>
                 <div class="footer__mail">
                     <h3 class="footer__lable">Email</h3>
                     <p class="footer__text">info@rodud.com</p>
@@ -246,7 +250,7 @@
                 <div class="footer__address">
                     <h3 class="footer__lable">Address</h3>
                     <p class="footer__text">Infront of Alwaleed Hall , Medinah , Western Region, Saudi Arabia</p>
-                    <p class="footer__nums">920011978</p>
+                    <p class="footer__nums">00966555074978</p>
                 </div>
                 <div class="footer__media">
                     <a class="footer__media-link" href="https://www.instagram.com/rododlogistics/?hl=en"><img
@@ -257,12 +261,12 @@
                         href="https://www.facebook.com/RODUD-109267304252571/?modal=admin_todo_tour"><img
                             class="footer__media-icon" src="img/footer/facebook.svg" alt="facebook"></a>
                 </div>
-                <p class="footer__terms">Terms of Conditions</p>
+                <a class="footer__terms" href="pdf/terms_and_conditions.pdf">Terms of Conditions</a>
             </div>
         </div>
     </footer>
 
-    <script src="js/pdfobject.min.js"></script>
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
     <script src='js/script.js'></script>
 </body>
 
