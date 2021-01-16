@@ -15,6 +15,11 @@
     filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.16));
     z-index: 5;
 
+    &__container {
+        width: 90%;
+        max-width: 1180px;
+        margin: 0 auto;
+    }
 
     &__inner {
         display: flex;
@@ -23,7 +28,7 @@
     }
 
     &__logo {
-        width: 30%;
+        flex: 1;
 
         &-icon {
             width: 100px;
@@ -36,11 +41,7 @@
         }
 
         @media(max-width: 992px) {
-            width: 20%;
-        }
-
-        @media(max-width: 576px) {
-            width: 40%;
+            flex: unset;
         }
 
     }
@@ -48,7 +49,8 @@
 
 
     &__nav {
-        width: 40%;
+        flex: 1;
+        max-width: 414px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -62,13 +64,16 @@
             &:hover {
                 color: lighten($color: #111111, $amount: 50%);
             }
+
+            @media(max-width: 768px) {
+                &:nth-child(n+2) {
+                    margin: 48px 0 0;
+
+                }
+            }
         }
 
-        @media(max-width: 992px) {
-            width: 60%;
-        }
-
-        @media(max-width:576px) {
+        @media(max-width:768px) {
             position: absolute;
             top: 0;
             right: 0;
@@ -81,11 +86,11 @@
             z-index: 10;
             transform: translateX(100%);
             transition: transform 0.3s;
+            max-width: unset;
 
+            &:nth-child(n+2) {
+                margin: 48px 0 0;
 
-            li {
-                @include content-text-style(#111111);
-                margin-bottom: 32px;
             }
         }
 
@@ -94,25 +99,24 @@
         }
     }
 
-    &__lang {
-        width: 30%;
+    &__right {
+        flex: 1;
         @include content-text-style(#AFAFAF);
         font-family: 'Montserrat',
             sans-serif;
         text-align: right;
 
         @media(max-width: 992px) {
-            width: 20%;
+            flex: unset;
         }
 
-        @media(max-width: 576px) {
-            width: 40%;
+        @media(max-width: 768px) {
+            width: 65%;
         }
     }
 
     &__link {
         @include content-text-style(#AFAFAF);
-        text-decoration: none;
 
         &_active {
             font-weight: 600;
@@ -121,13 +125,41 @@
 
     }
 
+    &__btn {
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 140%;
+        color: #FFFFFF;
+        background: #4BAF4F;
+        border-radius: 8px;
+        padding: 13px 24px;
+        margin: 0 0 0 30px;
+        transition: background-color 0.3s ease-in-out;
+
+        &:hover {
+            background-color: darken($color: #4BAF4F, $amount: 7%);
+        }
+
+        &_mobile {
+            display: none;
+        }
+
+        @media(max-width: 768px) {
+            display: none;
+
+            &_mobile {
+                display: block;
+            }
+        }
+    }
+
     &__burger {
         display: none;
         cursor: pointer;
         height: 15px;
         z-index: 15;
 
-        @media(max-width:576px) {
+        @media(max-width:768px) {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -274,7 +306,6 @@ $height: 13px;
             transition: background-color 0.3s ease-in-out;
 
             &:hover {
-                // background-color: #31136C;
                 background-color: darken($color: #31136C, $amount: 5%);
 
             }
@@ -461,6 +492,37 @@ $height: 13px;
             transform: translate(-60%, -70%);
 
         }
+    }
+}
+
+.terms-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    z-index: 10;
+
+    &__pdf {
+        width: 528px;
+        height: 90vh;
+    }
+
+    &__close {
+        position: absolute;
+        right: 32px;
+        top: 32px;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+    }
+
+    &_active {
+        display: flex;
     }
 }
 
@@ -895,6 +957,19 @@ $height: 13px;
             &:hover {
                 transform: translate(10%, -10%);
             }
+        }
+    }
+
+    &__terms {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 140%;
+        margin: 48px 0 0;
+        cursor: pointer;
+        color: #D7D7D7;
+
+        @media(max-width: 768px) {
+            display: none;
         }
     }
 }

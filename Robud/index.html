@@ -16,7 +16,7 @@
 
     <section class="hero-page">
         <header class="header">
-            <div class="container">
+            <div class="header__container">
                 <div class="header__inner">
                     <div class="header__logo">
                         <img class="header__logo-icon" src="img/hero-page/logo.svg" alt="Logo">
@@ -26,11 +26,18 @@
                         <li class="header__nav-item" data-scroll=".driver-app">Driver app</li>
                         <li class="header__nav-item" data-scroll=".user-watch">Video</li>
                         <li class="header__nav-item" data-scroll=".footer">Contact</li>
+                        <a class="header__nav-item header__btn header__btn_mobile" href="https://webdesk.onde.app">Book
+                            car</a>
+
                     </ul>
-                    <div class="header__lang">
-                        <a class="header__link header__link_active" href="index.html">EN</a>
-                        /
-                        <a class="header__link" href="index_ar.html">AR</a>
+                    <div class="header__right">
+                        <div class="header__lang">
+                            <a class="header__link header__link_active" href="index.html">EN</a>
+                            /
+                            <a class="header__link" href="index_ar.html">AR</a>
+
+                            <a class="header__btn" href="https://webdesk.onde.app">Book car</a>
+                        </div>
                     </div>
                     <div class="header__burger">
                         <div class="line"></div>
@@ -72,7 +79,10 @@
             </div>
         </div>
     </section>
-
+    <div class="terms-modal">
+        <img class="terms-modal__close" src="img/cross.svg" alt="close">
+        <div class="terms-modal__pdf" id="pdf"></div>
+    </div>
     <section class="watch user-watch">
         <div class="container">
             <h2 class="watch__title">Watch the video</h2>
@@ -236,7 +246,7 @@
                 <div class="footer__address">
                     <h3 class="footer__lable">Address</h3>
                     <p class="footer__text">Infront of Alwaleed Hall , Medinah , Western Region, Saudi Arabia</p>
-                    <p class="footer__nums">00966555074978</p>
+                    <p class="footer__nums">920011978</p>
                 </div>
                 <div class="footer__media">
                     <a class="footer__media-link" href="https://www.instagram.com/rododlogistics/?hl=en"><img
@@ -247,14 +257,12 @@
                         href="https://www.facebook.com/RODUD-109267304252571/?modal=admin_todo_tour"><img
                             class="footer__media-icon" src="img/footer/facebook.svg" alt="facebook"></a>
                 </div>
+                <p class="footer__terms">Terms of Conditions</p>
             </div>
         </div>
     </footer>
 
-
-
-
-
+    <script src="js/pdfobject.min.js"></script>
     <script src='js/script.js'></script>
 </body>
 

@@ -26,11 +26,14 @@
                         <li class="header__nav-item" data-scroll=".driver-app">سائق التطبيق</li>
                         <li class="header__nav-item" data-scroll=".user-watch">فيديو</li>
                         <li class="header__nav-item" data-scroll=".footer">الاتصال</li>
+                        <a class="header__nav-item header__btn header__btn_mobile" href="https://webdesk.onde.app">كتاب
+                            السيارة</a>
                     </ul>
-                    <div class="header__lang">
+                    <div class="header__right">
                         <a class="header__link" href="index.html">EN</a>
                         /
                         <a class="header__link header__link_active" href="index_ar.html">AR</a>
+                        <a class="header__btn" href="https://webdesk.onde.app">كتاب السيارة</a>
                     </div>
                     <div class="header__burger">
                         <div class="line"></div>
@@ -71,7 +74,10 @@
             </div>
         </div>
     </section>
-
+    <div class="terms-modal">
+        <img class="terms-modal__close" src="img/cross.svg" alt="close">
+        <div class="terms-modal__pdf" id="pdf"></div>
+    </div>
     <section class="watch user-watch">
         <div class="container">
             <h2 class="watch__title">مشاهدة الفيديو</h2>
@@ -218,7 +224,7 @@
                     <p class="footer__text footer__text_ar">مقابل صالة الوليد ، المدينة المنورة ، المنطقة الغربية ،
                         المملكة العربية
                         السعودية</p>
-                    <p class="footer__nums footer__nums_ar">00966555074978</p>
+                    <p class="footer__nums footer__nums_ar">920011978</p>
                 </div>
                 <div class="footer__media">
                     <a class="footer__media-link" href="https://www.instagram.com/rododlogistics/?hl=en"><img
@@ -229,14 +235,12 @@
                         href="https://www.facebook.com/RODUD-109267304252571/?modal=admin_todo_tour"><img
                             class="footer__media-icon" src="img/footer/facebook.svg" alt="facebook"></a>
                 </div>
+                <p class="footer__terms">الأحكام والشروط</p>
             </div>
         </div>
     </footer>
 
-
-
-
-
+    <script src="js/pdfobject.min.js"></script>
     <script src='js/script.js'></script>
 </body>
 

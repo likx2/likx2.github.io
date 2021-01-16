@@ -20,3 +20,14 @@
     max-width: 1180px;
     margin: 0 auto;
 }
+
+a {
+    text-decoration: none;
+    text-decoration: none;
+
+    &:active,
+    &:visited,
+    &:focus {
+        outline: none;
+    }
+}
