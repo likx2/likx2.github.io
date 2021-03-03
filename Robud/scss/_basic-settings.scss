@@ -10,10 +10,16 @@
 
 }
 
-.ar {
+.ar *:not(.header__link) {
     font-family: 'Lateef',
         cursive;
+    font-weight: 400;
 }
+
+section[class$='_rtl'] {
+    direction: rtl;
+}
+
 
 .container {
     width: 90%;

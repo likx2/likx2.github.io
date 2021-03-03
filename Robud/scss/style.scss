@@ -116,6 +116,8 @@
     }
 
     &__link {
+        font-family: 'Montserrat',
+            sans-serif;
         @include content-text-style(#AFAFAF);
 
         &_active {
@@ -150,6 +152,10 @@
             &_mobile {
                 display: block;
             }
+        }
+
+        &_ar {
+            font-weight: normal;
         }
     }
 
@@ -242,6 +248,9 @@ $height: 13px;
             font-size: 32px;
         }
 
+        &_ar {
+            font-size: 64px;
+        }
     }
 
     &__subtext {
@@ -251,6 +260,9 @@ $height: 13px;
         margin: 16px 0 0;
         color: white;
 
+        &_ar {
+            font-size: 24px;
+        }
 
     }
 
@@ -300,9 +312,6 @@ $height: 13px;
 
         }
 
-        &_ar {
-            flex-direction: row-reverse;
-        }
     }
 
     &__left {
@@ -326,23 +335,11 @@ $height: 13px;
             text-align: unset;
         }
 
-        &_ar {
-            text-align: right;
 
-            @media(max-width: 768px) {
-                text-align: center;
-            }
-
-            @media(max-width: 576px) {
-                text-align: right;
-            }
-        }
     }
 
     &__title {
-        font-weight: 800;
-        font-size: 32px;
-        line-height: 45px;
+        @include title-style(#FFFFFF)
     }
 
     &__text {
@@ -350,37 +347,15 @@ $height: 13px;
         font-size: 16px;
         line-height: 22px;
         margin-top: 24px;
-    }
-
-    &__app-list {
-        display: flex;
-        width: fit-content;
-        margin-top: 48px;
-
-        @media(max-width: 768px) {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        @media(max-width: 576px) {
-            display: block;
-        }
 
         &_ar {
-            margin-left: auto;
-        }
-
-    }
-
-    &__link {
-        display: block;
-        text-align: center;
-        margin: 0 16px;
-
-        @media(max-width:576px) {
-            margin: 0 auto 24px auto;
+            font-size: 20px;
         }
     }
+
+
+
+
 
     &__right {
         width: 40%;
@@ -401,10 +376,7 @@ $height: 13px;
         }
     }
 
-    &_ar {
-        background: url('../img/user-app/user-app-bg_ar.jpg') no-repeat center;
-        background-size: cover;
-    }
+
 
     @media(max-width: 768px) {
         padding-top: 64px;
@@ -423,7 +395,7 @@ $height: 13px;
     padding-bottom: 162px;
 
     &__title {
-        @include title-style;
+        @include title-style();
     }
 
     &__subtitle {
@@ -494,18 +466,13 @@ $height: 13px;
         justify-content: space-between;
 
 
-        &__ar {
-            flex-direction: row-reverse;
-        }
+
 
         @media(max-width: 768px) {
             display: block;
             margin: 0;
         }
 
-        &_ar {
-            flex-direction: row-reverse;
-        }
     }
 
     &__left {
@@ -529,24 +496,11 @@ $height: 13px;
             text-align: unset;
         }
 
-        &_ar {
-            text-align: right;
 
-            @media(max-width: 768px) {
-                text-align: center;
-            }
-
-            @media(max-width: 576px) {
-                text-align: right;
-            }
-        }
     }
 
     &__title {
-        font-weight: 800;
-        font-size: 32px;
-        line-height: 45px;
-
+        @include title-style(#FFFFFF)
     }
 
     &__text {
@@ -555,6 +509,10 @@ $height: 13px;
         line-height: 22px;
         margin: 24px 0 0;
         max-width: 423px;
+
+        &_ar {
+            font-size: 20px;
+        }
 
         @media(max-width:768px) {
             margin: 24px auto 0 auto;
@@ -582,10 +540,7 @@ $height: 13px;
         }
     }
 
-    &_ar {
-        background: url('../img/driver-app/driver-app-bg_ar.jpg') no-repeat center;
-        background-size: cover;
-    }
+
 
     @media(max-width: 768px) {
         padding-top: 48px;
@@ -596,36 +551,35 @@ $height: 13px;
         padding-top: 80px;
     }
 
-
+    &_ar {
+        background: url('../img/driver-app/driver-app-bg_ar.jpg')
+    }
 }
 
 .app-list {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-column-gap: 33px;
     width: fit-content;
     margin: 48px 0 0;
 
-    @media(max-width: 768px) {
+    @media(max-width:768px) {
         margin: 32px auto 0 auto;
     }
 
     @media(max-width: 576px) {
-        display: block;
+        grid-column-gap: unset;
+        grid-template-columns: unset;
+        grid-row-gap: 25px;
     }
 
-    &_ar {
-        margin-left: auto;
-    }
+
 
     &__link {
-        display: block;
-        text-align: center;
 
-        &:nth-of-type(2) {
-            margin: 0 0 0 33px;
-
-            @media(max-width:576px) {
-                margin: 25px 0 0;
-            }
+        @media(max-width:576px) {
+            text-align: center;
         }
 
     }
@@ -638,7 +592,7 @@ $height: 13px;
     padding-bottom: 162px;
 
     &__title {
-        @include title-style;
+        @include title-style();
     }
 
     &__subtitle {
@@ -716,10 +670,6 @@ $height: 13px;
         font-weight: 800;
         color: #FFFFFF;
 
-        &_ar {
-            font-weight: normal;
-
-        }
     }
 
     &__media {

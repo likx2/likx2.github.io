@@ -1,9 +1,12 @@
-@mixin title-style {
+@mixin title-style($color:#111111) {
     font-weight: 800;
     font-size: 32px;
     line-height: 140%;
-    text-align: center;
-    color: $black;
+    color: $color;
+
+    @media(max-width:768px) {
+        text-align: center;
+    }
 }
 
 @mixin content-text-style($color: #404040) {
