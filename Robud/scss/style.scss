@@ -488,12 +488,11 @@ $height: 13px;
     background: url('../img/driver-app/driver-app-bg.jpg') no-repeat;
     background-position: center;
     background-size: cover;
-    padding-top: 84px;
 
     &__inner {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+
 
         &__ar {
             flex-direction: row-reverse;
@@ -510,8 +509,8 @@ $height: 13px;
     }
 
     &__left {
+        align-self: center;
         width: 55%;
-        margin: 64px 0 0;
         color: #FFFFFF;
         text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.32);
 
@@ -547,49 +546,25 @@ $height: 13px;
         font-weight: 800;
         font-size: 32px;
         line-height: 45px;
+
     }
 
     &__text {
         font-weight: 500;
         font-size: 16px;
         line-height: 22px;
-        margin-top: 24px;
+        margin: 24px 0 0;
         max-width: 423px;
 
-    }
-
-    &__app-list {
-        display: flex;
-        width: fit-content;
-        margin-top: 48px;
-
-        @media(max-width: 768px) {
-            margin-left: auto;
-            margin-right: auto;
+        @media(max-width:768px) {
+            margin: 24px auto 0 auto;
         }
 
-        @media(max-width: 576px) {
-            display: block;
-        }
-
-        &_ar {
-            margin-left: auto;
-        }
-
-    }
-
-    &__link {
-        display: block;
-        text-align: center;
-        margin: 0 16px;
-
-        @media(max-width:576px) {
-            margin: 0 auto 24px auto;
-        }
     }
 
     &__right {
         width: 40%;
+        padding: 84px 0 0;
 
         &-img {
             width: 100%;
@@ -623,6 +598,39 @@ $height: 13px;
 
 
 }
+
+.app-list {
+    display: flex;
+    width: fit-content;
+    margin: 48px 0 0;
+
+    @media(max-width: 768px) {
+        margin: 32px auto 0 auto;
+    }
+
+    @media(max-width: 576px) {
+        display: block;
+    }
+
+    &_ar {
+        margin-left: auto;
+    }
+
+    &__link {
+        display: block;
+        text-align: center;
+
+        &:nth-of-type(2) {
+            margin: 0 0 0 33px;
+
+            @media(max-width:576px) {
+                margin: 25px 0 0;
+            }
+        }
+
+    }
+}
+
 
 .driver-work {
     text-align: center;
@@ -715,7 +723,7 @@ $height: 13px;
     }
 
     &__media {
-        margin-top: 48px;
+        margin: 48px 0;
 
         &-link {
             margin: 0 10px;
@@ -732,13 +740,16 @@ $height: 13px;
         }
     }
 
-    &__terms {
-        display: inline-block;
+    &__rights {
+        display: block;
         font-weight: 500;
         font-size: 16px;
         line-height: 140%;
-        margin: 48px 0 0;
         cursor: pointer;
         color: #D7D7D7;
+
+        &:nth-of-type(2) {
+            margin: 32px 0 0;
+        }
     }
 }
