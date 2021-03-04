@@ -457,7 +457,8 @@ $height: 13px;
 }
 
 .driver-app {
-    background: url('../img/driver-app/driver-app-bg.jpg') no-repeat;
+    background: url('../img/driver-app/driver-app-bg.jpg');
+    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 
@@ -552,7 +553,10 @@ $height: 13px;
     }
 
     &_ar {
-        background: url('../img/driver-app/driver-app-bg_ar.jpg')
+        background: url('../img/driver-app/driver-app-bg_ar.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
     }
 }
 
